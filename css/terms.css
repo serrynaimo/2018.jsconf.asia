@@ -1,0 +1,39 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  background: #072339;
+  overflow-x: hidden;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-weight: 300;
+  color: #fff;
+}
+
+body > * {
+	width: 500px;
+	margin: 30px auto;
+}
+
+b {
+	font-weight: 700;
+}
+
+h1 {
+	font-family: 'Doppio One';
+	text-align: center;
+	color: #9AE0FF;
+}
+
+h2 {
+	color: #56AAEB;
+}
+
+.content-info {
+	font-size: .85em;
+}
+
+a {
+	color: #56AAEB;
+}

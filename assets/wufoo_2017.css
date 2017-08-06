@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Doppio+One');
+
+body {
+  margin: 0 !important;
+}
+
+#container {
+  width: 720px !important;
+  border: 0 !important;
+}
+
+#header.info {
+  margin-top: -65px;
+}
+
+#logo a {
+  background-size: cover !important;
+  background-position: bottom right;
+}
+
+.wufoo .info div {
+  font-weight: 300 !important;
+}
+
+.wufoo {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 1.2em;
+}
+
+.wufoo input, .wufoo textarea {
+  font-size: 1.5em !important;
+  padding: 5px !important;
+  border: 1px solid #444 !important;
+  border-radius: 3px !important;
+}
+
+.wufoo h2, .wufoo h3, .wufoo h4 {
+  font-family: 'Doppio One' !important;
+}
+
+.wufoo ul li {
+    padding: 20px 0 !important;
+}
+
+.wufoo label, .wufoo legend {
+  padding-bottom: 10px !important;
+}
+
+.wufoo .instruct {
+  margin-left: 20px !important;
+}
+
+.wufoo a {
+  color: #478fe2 !important;
+}
+
+.wufoo input[type='submit'] {
+  padding: 10px 30px !important;
+  background: #478fe2 !important;
+  border-radius: 2px;
+  color: white !important;
+  font-family: 'Doppio One' !important;
+  border: 0 !important
+}
