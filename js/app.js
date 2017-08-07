@@ -64,7 +64,7 @@ $("#subscribeForm input[type='email']").on("focus", function() {
 
 var body = document.getElementById('body')
 var check = function () {
-	if (body.scrollTop > document.body.offsetHeight / 4) {
+	if (body.scrollTop > 10) {
 		document.body.classList.add('small')
 	}
 	else {
