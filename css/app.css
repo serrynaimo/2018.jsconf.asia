@@ -2,40 +2,49 @@ html,
 body {
   margin: 0px;
   padding: 0px;
-  width: 100%;
-  height: 100%;
   background: #111;
-  overflow-x: hidden;
+  overflow: hidden;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
-  overflow-x: hidden;
+  position: relative;
+  background: radial-gradient(ellipse at bottom left, #021C7F 0, #111 100%);
 }
 
 
 #intro {
+  position: relative;
   width: 100vw;
   height: 100vh;
-  position: relative;
-  perspective: 100vw;
   overflow: hidden;
-  background: radial-gradient(ellipse at bottom left, #021C7F 0, #111 100%);
+}
+
+#intro > div {
+    width: 100%;
+    height: 100%;
+    perspective: 100vw;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
 }
 
 #disc {
   position: absolute;
+  z-index: 100;
   bottom: 49%;
-  left: 100px;
+  left: 60px;
   margin: -42vw;
-  box-sizing: border-box;
   transform-style: preserve-3d;
+  box-sizing: border-box;
   background-clip: padding-box;
   background-color: rgba(0,0,0,0.2);
   width: 84vw;
   height: 84vw;
   border-radius: 42vw;
   border: 2vw solid hsla(0,0%,100%,.1);
+  perspective-origin: 50% 60%;
   /*-webkit-mask: linear-gradient(hsla(0,0%,0%,.1), hsla(0,0%,0%,1)  90% );*/
   transform-origin: 50% 60%;
-  transform: rotateX(85deg) translate(14vw, 30vw);
+  transform: rotateX(85deg) translate(20vw, 30vw);
+  transition: transform 1s cubic-bezier(.6,.2,0,.8);
+  animation: move-in 2s cubic-bezier(.2,.2,0,.99) 1;
 }
 
 #disc:before,
@@ -51,7 +60,7 @@ body {
   border: inherit;
   border-color: transparent;
   animation: spinner-spin 3s 1s cubic-bezier(.6,.2,0,.8) infinite,
-             spinner-fade 2s 1.8s linear infinite;
+             spinner-fade 3s 1s linear infinite;
 
 }
 
@@ -61,7 +70,17 @@ body {
 
 #disc:after {
   border-top-color: #56AAEB;
+  animation-duration: 1.8s;
   animation-delay: 1.75s;
+}
+
+@keyframes move-in {
+  0% {
+    transform: rotateX(90deg) rotateZ(-50deg) translate(0vw, 50vw);
+  }
+  100% {
+    transform: rotateX(85deg) translate(20vw, 30vw);
+  }
 }
 
 @keyframes spinner-spin {
@@ -88,7 +107,7 @@ body {
 
 @keyframes rotate-in {
   0% {
-    transform: rotateZ(-60deg) rotateX(-90deg) translateY(7.8%);
+    transform: rotateZ(-40deg) rotateX(-90deg) translateY(7.8%);
     opacity: 0;
   }
   100% {
@@ -119,169 +138,114 @@ body {
   position: absolute;
   width: 30%;
   right: 5%;
-  bottom: 23%;
+  bottom: 18%;
   transform-origin: bottom left;
   backface-visibility: visible;
   transform: rotateX(-90deg) translateY(7.8%) translateX(-3.8%);
-  animation: fade-in 2.9s cubic-bezier(.6,.2,0,.8) 1;
+  animation: fade-in 2s cubic-bezier(.6,.2,0,.8) 1;
+  transition: transform 1s cubic-bezier(.6,.2,0,.8);
 }
 
-
-#subscribeForm {
-  margin: 40px auto 0;
-	width: 500px;
-  height: 80px;
-	display: block;
-  text-align: center;
-  perspective: 500;
-}
-
-#subscribeForm .input {
-  transform: translateZ(-20px);
-  transition: all .2s ease-out;
-  opacity: .7;
-}
-
-#subscribeForm.hovered .input, #subscribeForm.selected .input, #subscribeForm.load .input, #subscribeForm.failure .input {
-  transform: translateZ(0px) translateY(0);
-  opacity: 1;
-}
-
-#subscribeForm.load .input, #subscribeForm.success .input {
-  transform: translateY(-10px);
-  opacity: 0;
-}
-
-
-#subscribeForm .input input {
-  display: inline-block;
-  box-sizing: border-box;
-  vertical-align: top;
-  font-size: 20px;
-  line-height: 40px;
-  padding: 0 10px;
-  font-family: 'Doppio One';
-  outline: 0;
-  width: 170px;
-  height: 40px;
-  border-radius: 0;
-  background: transparent;
-  border: 1px solid #888;
-  color: #bbb;
-  border-right: 0;
-}
-
-#subscribeForm .input input[type=email] {
-  border-left: 0;
-}
-
-#subscribeForm .input input[type=submit] {
-  display: inline-block;
-  border-right: 1px solid #888;
-  border-left: 0;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 1em;
-  width: 120px;
-}
-
-#subscribeForm .input input[type=submit]:hover {
-  color: #fff !important;
-}
-
-::-webkit-input-placeholder {
-  font-size: .8em;
-  color: #aaa;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-  font-size: .8em;
-  color: #aaa;
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-  font-size: .8em;
-  color: #aaa;
-}
-
-:-ms-input-placeholder {
-  font-size: .8em;
-  color: #888;
-}
-
-
-#subscribeForm .msg {
-	width: 100%;
-  position: relative;
-  top: 20px;
-	text-align: center;
-	color: #777;
-	font-size: 1em;
-  opacity: 0;
-  transition: all .2s ease-out;
-}
-
-#subscribeForm.failure .msg {
-    opacity: 1 !important;
-}
-
-a.skip {
-  position: absolute;
-  z-index: 30;
-  bottom: 5%;
-  left: 50%;
-  width: 200px;
-  margin: 0 -100px;
-  text-align: center;
-  color: #444;
-  text-decoration: none;
+#info > span {
   display: block;
-  transition: color 0.2s linear;
-}
-a.skip:hover {
-  color: #888;
+  transition: transform 1s ease-in-out;
 }
 
+.small #intro > div {
+  transform: translateX(-25vw) scale(0.85) rotateY(15deg) rotateZ(-2deg);
+}
 
+.small #info > span {
+  transform: translateX(8%);
+}
 
 
 #body {
-  position: relative;
-  z-index: 10;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-snap-type: mandatory;
+  scroll-behaviour: auto;
+  scroll-snap-points-y: repeat(100vh);
+  -webkit-overflow-scrolling: touch;
+  -webkit-scroll-snap-type: mandatory;
+  -ms-scroll-snap-type: mandatory;
+  /* older spec implementation */
+  -webkit-scroll-snap-destination: 100vh 0;
+  -ms-scroll-snap-destination: 100vh 0;
+  -webkit-scroll-snap-points-y: repeat(100vh);
+  -ms-scroll-snap-points-y: repeat(100vh);
+
 }
 
 
 #body > section {
-  min-width: 450px;
-  margin: 0 auto 100px;
+  height: 100vh;
+  -webkit-scroll-snap-align: start;
+  -ms-scroll-snap-align: start;
+  scroll-snap-align: start;
+  padding-left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#about {
-  margin-bottom: 100px;
+#body > section:first-child {
+  padding-top: 100vh;
+}
+
+
+@media (max-width: 1023px) {
+  .small #intro > div {
+    transform: translate(0%, 30%) scale(0.5);
+  }
+
+  .small #info > span {
+    transform: translateX(8%);
+  }
+
+  #body > section {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30vh;
+    height: 70vh;
+  }
+
+  #body {
+    -ms-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 65%, transparent 75%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 65%, transparent 75%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 65%, transparent 75%);
+  }
+}
+
+@media (max-width: 639px) {
+  .small #intro > div {
+    transform: translate(-8%, 28%) scale(0.8);
+  }
+
+  .small #info > span {
+    transform: translateX(8%);
+  }
+}
+
+
+
+p {
+  color: #fff;
+  font-size: 1em;
+  line-height: 1.4em;
+  letter-spacing: 1px;
+  font-weight: 300;
   text-align: center;
 }
 
-p {
-  width: 420px;
-  color: #bbb;
-  font-size: 1.1em;
-  line-height: 1.4em;
-  letter-spacing: 1px;
-  font-weight: 200;
-}
-
-
-#about p {
-  margin: 120px auto 40px;
-}
-
-#about a.hint {
-  display: inline-block;
-  color: #666;
-  font-size: 0.75em;
-  padding-top: 15px;
-  text-decoration: none;
-}
 
 a.button {
   display: inline-block;
@@ -297,7 +261,7 @@ a.button {
 }
 
 a.button:after {
-  content: "WATCH THE VIDEOS!";
+  content: "CONTRIBUTE";
   z-index: 7;
   padding: 10px 30px;
   color: #fff;
@@ -331,91 +295,157 @@ a.button:hover:after {
 }
 
 #countdown {
+  font-family: 'Doppio One';
+  font-size: 1.4em;
+}
+
+
+
+#subscribeForm {
+  margin: 40px auto 0;
+	display: block;
+  text-align: center;
+  perspective: 500;
+}
+
+#subscribeForm .input {
+  transform: translateZ(0px);
+  transition: all .2s ease-out;
+}
+
+#subscribeForm.hovered .input, #subscribeForm.selected .input, #subscribeForm.load .input, #subscribeForm.failure .input {
+  transform: translateZ(20px) translateY(0);
+}
+
+#subscribeForm.load .input, #subscribeForm.success .input {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+
+#subscribeForm .input input {
+  display: block;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  padding: 0 10px;
+  outline: 0;
+  width: 260px;
+  margin: 4px auto;
+  height: 40px;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
   color: #fff;
 }
 
 
+#subscribeForm .input input[type=submit] {
+  font-family: 'Doppio One';
+  border: none;
+  border-radius: 3px;
+  margin-top: 7px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1em;
+  line-height: 1em;
+  width: 120px;
+  background: rgba(255,255,255,0);
+  transition: background .2s ease-out;
+  cursor: pointer;
+}
+
+#subscribeForm .input input[type=submit]:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+::-webkit-input-placeholder {
+  font-size: .8em;
+  color: rgba(255,255,255,0.6);
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  font-size: .8em;
+  color: rgba(255,255,255,0.6);
+}
+
+:-ms-input-placeholder {
+  font-size: .8em;
+  color: rgba(255,255,255,0.6);
+}
+
+
+#subscribeForm .msg {
+  position: relative;
+  top: 10px;
+	text-align: center;
+	color: #aaa;
+	font-size: 0.85em;
+  opacity: 0;
+  height: 2.5em;
+  transition: all .2s ease-out;
+}
+
+#subscribeForm.failure .msg {
+    opacity: 1 !important;
+}
+
+
+
+
 #updates {
-  clear: both;
-  padding-bottom: 50px;
+
 }
 
 #updates p {
-  font-size: 0.9em;
   text-align: center;
   margin: 0 auto;
   width: 500px;
 }
 
 #updates p a {
-  color: #ddd;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px dotted #888;
+}
+
+#updates p a:hover {
+  border-bottom-style: solid;
 }
 
 
 
 #footer {
-  border-top: 1px solid #222;
-  padding: 80px 0;
-  background: #0a0a0a;
+
 }
 
 #footer > div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: block;
+  text-align: center;
 }
 
 #footer > div > * {
-  min-width: 480px;
-  max-width: 36%;
   margin-bottom: 80px;
 }
 
 #logo {
   width: 100px;
   height: 100px;
-  border: 1px solid #888;
+  border: 1px solid #fff;
 }
 
 #footer p {
   text-align: center;
-  color: #888;
-  font-size: 0.9em;
-  line-height: 1.4em;
-  letter-spacing: 1px;
+  color: #fff;
   margin: 0 auto;
-  font-weight: 200;
 }
 
 #footer p a {
-  color: #888;
+  color: #fff;
   text-decoration: none;
   border-bottom: 1px dotted #888;
 }
 
 #footer p a:hover {
-  color: #bbb;
-}
-
-
-@media all and (min-width: 1020px) {
-    #body > section {
-        width: 1020px;
-        margin: 0 auto 100px;
-    }
-
-    #speakers .day {
-      float: left;
-    }
-
-    #speakers .speaker {
-        margin: 16px 0 0 20px;
-        float: left;
-    }
-
-    #speakers .day > h4 {
-        margin: 0 0 -5px 0;
-        left: auto;
-    }
-
+  border-bottom-style: solid;
 }

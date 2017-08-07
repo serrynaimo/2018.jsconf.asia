@@ -23,7 +23,7 @@ $("#subscribeForm").ajaxForm({
 				$("#subscribeForm .msg").removeClass("play");
 			},3000);
 			setTimeout(function() {
-				window.location = "https://twitter.com/jsconfasia";
+				window.location = "https://facebook.com/jsconfasia";
 			},10);
 		}
 	},
@@ -61,3 +61,13 @@ $("#subscribeForm input[type='email']").on("focus", function() {
         },1);
     }
 });
+
+var body = document.getElementById('body')
+body.addEventListener("scroll", function () {
+	if (body.scrollTop > document.body.offsetHeight / 4) {
+		document.body.classList.add('small')
+	}
+	else {
+		document.body.classList.remove('small')
+	}
+})
