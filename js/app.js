@@ -72,4 +72,7 @@ var check = function () {
 	}
 }
 body.addEventListener("scroll", check)
+body.addEventListener("touchstart", function () {
+	body.removeEventListener("scroll", check)
+})
 body.addEventListener("touchmove", check)
