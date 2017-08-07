@@ -63,7 +63,7 @@ $("#subscribeForm input[type='email']").on("focus", function() {
 });
 
 var body = document.getElementById('body')
-body.addEventListener("scroll", function () {
+body.addEventListener("scroll touchmove", function () {
 	if (body.scrollTop > document.body.offsetHeight / 4) {
 		document.body.classList.add('small')
 	}
