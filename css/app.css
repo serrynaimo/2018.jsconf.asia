@@ -29,6 +29,10 @@ body {
   opacity: 0;
 }
 
+#slogan {
+  font-style: italic;
+}
+
 body:not(.small) #scroll {
   animation: show-scroll 4s ease-out 1;
   opacity: 1;
