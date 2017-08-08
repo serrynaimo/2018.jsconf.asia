@@ -7,8 +7,64 @@ body {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
   position: relative;
   background: radial-gradient(ellipse at bottom left, #021C7F 0, #111 100%);
+  -webkit-filter: brightness(1.2);
+  -ms-filter: brightness(1.2);
+  -moz-filter: brightness(1.2);
+  filter: brightness(1.2);
 }
 
+#scroll {
+  position: absolute;
+  bottom: 40px;
+  right: 24.8%;
+  margin: 0 -100px;
+  width: 200px;
+  z-index: 100;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.7em;
+  transition: opacity .3s ease-out;
+  opacity: 0;
+}
+
+body:not(.small) #scroll {
+  animation: show-scroll 4s ease-out 1;
+  opacity: 1;
+}
+
+@keyframes show-scroll {
+  0%, 75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hop {
+  0%, 100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(3px) rotate(-45deg);
+  }
+}
+
+#scroll:after {
+  content: "";
+  position: absolute;
+  bottom: -9px;
+  transform: rotate(-45deg);
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  right: 50%;
+  margin: -5px;
+  width: 10px;
+  height: 10px;
+  animation: hop 1s linear infinite;
+}
 
 #intro {
   position: relative;
@@ -42,7 +98,7 @@ body {
   perspective-origin: 50% 60%;
   /*-webkit-mask: linear-gradient(hsla(0,0%,0%,.1), hsla(0,0%,0%,1)  90% );*/
   transform-origin: 50% 60%;
-  transform: rotateX(85deg) translate(20vw, 30vw);
+  transform: rotateX(85deg) translate(20vw, 28vw);
   transition: transform 1s cubic-bezier(.6,.2,0,.8);
   animation: move-in 2s cubic-bezier(.2,.2,0,.99) 1;
 }
@@ -79,7 +135,7 @@ body {
     transform: rotateX(90deg) rotateZ(-50deg) translate(0vw, 50vw);
   }
   100% {
-    transform: rotateX(85deg) translate(20vw, 30vw);
+    transform: rotateX(85deg) translate(20vw, 28vw);
   }
 }
 
@@ -138,7 +194,7 @@ body {
   position: absolute;
   width: 30%;
   right: 5%;
-  bottom: 18%;
+  bottom: 21%;
   transform-origin: bottom left;
   backface-visibility: visible;
   transform: rotateX(-90deg) translateY(7.8%) translateX(-3.8%);
@@ -222,6 +278,10 @@ body {
     -ms-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 65%, transparent 75%);
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 65%, transparent 75%);
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 65%, transparent 75%);
+  }
+
+  #scroll {
+    right: 50%;
   }
 }
 
