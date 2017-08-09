@@ -62,14 +62,72 @@ $("#subscribeForm input[type='email']").on("focus", function() {
     }
 });
 
-var body = document.getElementById('body')
+var $body = document.getElementById('body')
 var check = function () {
-	if (body.scrollTop > 10) {
+	if ($body.scrollTop > 10) {
 		document.body.classList.add('small')
 	}
 	else {
 		document.body.classList.remove('small')
 	}
 }
-body.addEventListener("scroll", check)
-body.addEventListener("touchmove", check)
+$body.addEventListener("scroll", check)
+$body.addEventListener("touchmove", check)
+
+var $disc = $('#disc')
+var $debug = document.getElementById('debug')
+var prevTransform
+var props = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+var inputs = []
+
+var change = function (e) {
+	var v = e.currentTarget.value
+	if (!v.match(/\d+(\.\d+)?/)) {
+		e.currentTarget.value = v = props[e.currentTarget.name]
+	} else {
+		props[e.currentTarget.name] = parseFloat(v)
+		update(e)
+	}
+}
+var keypress = function (e) {
+	n = e.currentTarget.name
+	if (e.key === 'Enter') {
+		change(e)
+	} else if (e.key === 'ArrowUp') {
+		props[n] -= (n.match(/10|12|13/) ? -5 : -0.2)
+		update(e)
+	} else if (e.key === ' ') {
+		props[n] = 0
+		update(e)
+	} else if (e.key === 'ArrowDown') {
+		props[n] -= (n.match(/10|12|13/) ? 5 : 0.2)
+		update(e)
+	}
+}
+var update = function (e) {
+	e.preventDefault()
+	$disc.css('transform', 'matrix3d(' + props.join(', ') + ')')
+}
+setInterval(function () {
+	var transform = $disc.css('transform')
+	if (transform === prevTransform) {
+		return
+	}
+	prevTransform = transform
+	props = transform.substr(9, transform.length - 10).split(', ')
+	var j = 0
+	props.forEach(function(p) {
+		inputs[j++].value = p
+	})
+}, 50)
+
+var j = 0
+props.forEach(function(p) {
+	var i = document.createElement('input')
+	i.value = p
+	i.name = j++
+	i.addEventListener('change', change)
+	i.addEventListener('keydown', keypress)
+	$debug.appendChild(i)
+	inputs.push(i)
+})

@@ -33,6 +33,34 @@ body {
   font-style: italic;
 }
 
+#layer {
+  z-index: 110;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+
+#layer a {
+  color: rgba(255,255,255,0.1);
+  display: block;
+  text-decoration: none;
+  font-size: 0.7em;
+  font-family: 'Consolas', 'Courier', monospace;
+}
+
+#debug input {
+  background: transparent;
+  color: rgba(255,255,255,0.1);
+  border: 0;
+  display: block;
+  padding: 0;
+  font-family: 'Consolas', 'Courier', monospace;
+}
+
+#debug input:active, #debug input:focus {
+  outline: none;
+}
+
 body:not(.small) #scroll {
   animation: show-scroll 4s ease-out 1;
   opacity: 1;
@@ -102,7 +130,7 @@ body:not(.small) #scroll {
   perspective-origin: 50% 60%;
   /*-webkit-mask: linear-gradient(hsla(0,0%,0%,.1), hsla(0,0%,0%,1)  90% );*/
   transform-origin: 50% 60%;
-  transform: rotateX(85deg) translate(20vw, 28vw);
+  transform: rotateX(85deg) rotateZ(0.0001deg) translate(20vw, 28vw);
   transition: transform 1s cubic-bezier(.6,.2,0,.8);
   animation: move-in 2s cubic-bezier(.2,.2,0,.99) 1;
 }
@@ -139,7 +167,7 @@ body:not(.small) #scroll {
     transform: rotateX(90deg) rotateZ(-50deg) translate(0vw, 50vw);
   }
   100% {
-    transform: rotateX(85deg) translate(20vw, 28vw);
+    transform: rotateX(85deg) rotateZ(0.0001deg) translate(20vw, 28vw);
   }
 }
 
@@ -286,6 +314,10 @@ body:not(.small) #scroll {
 
   #scroll {
     right: 50%;
+  }
+
+  #layer {
+    display: none;
   }
 }
 
