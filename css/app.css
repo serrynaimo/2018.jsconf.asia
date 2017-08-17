@@ -342,6 +342,10 @@ p {
   text-align: center;
 }
 
+p a {
+  color: white;
+}
+
 
 a.button {
   display: inline-block;
@@ -354,6 +358,19 @@ a.button {
   text-transform: uppercase;
   text-decoration: none;
   font-size: 1em;
+}
+
+a.button.ticket {
+  animation: borderanim .5s linear infinite;
+}
+
+@keyframes borderanim {
+  0%, 100% {
+    box-shadow: 0px 0px 0px 1px #011357, 0px 0px 0px 2px #fff;
+  }
+  50% {
+    box-shadow: 0px 0px 0px 5px #011357, 0px 0px 0px 6px #fff;
+  }
 }
 
 a.button:after {
@@ -369,6 +386,10 @@ a.button:after {
   top: 0;
   left: 0;
   right: 0;
+}
+
+a.button.ticket:after {
+  content: "GET YOUR TICKET"
 }
 
 a.button:before {
@@ -395,6 +416,18 @@ a.button:hover:after {
   font-size: 1.4em;
 }
 
+
+#ticket {
+  position: relative;
+  transition: all 0.5s ease-out;
+  opacity: 1;
+  top: 0px;
+}
+
+#ticket.hidden {
+  opacity: 0;
+  top: 20px;
+}
 
 
 #subscribeForm {
