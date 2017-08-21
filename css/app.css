@@ -109,7 +109,6 @@ body:not(.small) #scroll {
     width: 100%;
     height: 100%;
     perspective: 100vw;
-    transform-style: preserve-3d;
     transition: all 1s ease-in-out;
 }
 
@@ -189,7 +188,7 @@ body:not(.small) #scroll {
   top: 0;
   transform-origin: bottom left;
   backface-visibility: visible;
-  transform: rotateZ(7deg) rotateX(-90deg) translateY(7.8%);
+  transform: rotateZ(7deg) rotateX(-90deg);
   animation: rotate-in 2s cubic-bezier(.2,.2,0,.9) 1;
 }
 
