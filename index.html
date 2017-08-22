@@ -1,3 +1,6 @@
+<?php
+  date_default_timezone_set('Asia/Singapore');
+?>
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:og="http://ogp.me/ns#"
@@ -38,13 +41,23 @@
 
   <section id="body">
 
+    <section>&nbsp;</section>
+
     <section id="about">
       <p>
         <br/><br/>
         <span id="slogan">"It's a conference a year ahead of itself.<br/>It really is ... next years conference!"</span>
-        <br/><br/><br/>
-        Ticket sales start<br/><span id="countdown"></span><br/><br/><br/>
-        <a href="https://contribute.jsconf.asia" class="button">CONTRIBUTE</a>
+        <span id="counter">
+          <br/><br/><br/>
+          Ticket sales start<br/><span id="countdown"></span><br/><br/><br/>
+          <a href="https://contribute.jsconf.asia" class="button contribute">CONTRIBUTE</a>
+        </span>
+        <span id="ticket" class="hidden">
+          <br/><br/><br/>
+          <a href="https://events.pouchnation.com/event/jsconfasia2018" class="button ticket">GET YOUR TICKET</a>
+          <br/><br/><br>
+          <a href="https://contribute.jsconf.asia">Contribute to JSConf.Asia</a>
+        </span>
       </p>
     </section>
 
@@ -116,7 +129,7 @@
         var _minute = _second * 60;
         var _hour = _minute * 60;
         var _day = _hour * 24;
-        var start = new Date();
+        var start = new Date('<?php echo date("r"); ?>');
         var startjs = new Date();
         var diff = startjs - start;
         var timer;
@@ -125,10 +138,11 @@
             var now = new Date();
             var passed = now - startjs;
             var distance = end - start - passed;
-            if (distance < 0) {
+            if (distance <= 0) {
 
                 clearInterval(timer);
-                document.getElementById(id).innerHTML = 'now!';
+                document.getElementById("counter").style.display = "none"
+                document.getElementById("ticket").classList.remove("hidden")
 
                 return;
             }
@@ -148,6 +162,10 @@
         }
 
         timer = setInterval(showRemaining, 1000);
+    }
+
+    window.onwheel = function() {
+      document.getElementById("body").style.webkitScrollSnapPointsY = "none";
     }
 
   </script>

@@ -188,7 +188,7 @@ body:not(.small) #scroll {
   top: 0;
   transform-origin: bottom left;
   backface-visibility: visible;
-  transform: rotateZ(7deg) rotateX(-90deg);
+  transform: rotateZ(7deg) rotateX(-90deg) translateY(7.8%);
   animation: rotate-in 2s cubic-bezier(.2,.2,0,.9) 1;
 }
 
@@ -258,16 +258,18 @@ body:not(.small) #scroll {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
+
   scroll-snap-type: mandatory;
-  scroll-behaviour: auto;
+  scroll-behaviour: smooth;
   scroll-snap-points-y: repeat(100vh);
-  -webkit-overflow-scrolling: touch;
+
   -webkit-scroll-snap-type: mandatory;
-  -ms-scroll-snap-type: mandatory;
-  /* older spec implementation */
   -webkit-scroll-snap-destination: 100vh 0;
-  -ms-scroll-snap-destination: 100vh 0;
   -webkit-scroll-snap-points-y: repeat(100vh);
+  -webkit-overflow-scrolling: touch;
+
+  -ms-scroll-snap-destination: 100vh 0;
+  -ms-scroll-snap-type: mandatory;
   -ms-scroll-snap-points-y: repeat(100vh);
 
 }
@@ -283,11 +285,6 @@ body:not(.small) #scroll {
   justify-content: center;
   align-items: center;
 }
-
-#body > section:first-child {
-  padding-top: 100vh;
-}
-
 
 @media (max-width: 1023px) {
   .small #intro > div {
