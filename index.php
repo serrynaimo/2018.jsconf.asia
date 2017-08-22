@@ -41,6 +41,8 @@
 
   <section id="body">
 
+    <section>&nbsp;</section>
+
     <section id="about">
       <p>
         <br/><br/>
@@ -160,6 +162,10 @@
         }
 
         timer = setInterval(showRemaining, 1000);
+    }
+
+    window.onwheel = function() {
+      document.getElementById("body").style.webkitScrollSnapPointsY = "none";
     }
 
   </script>
