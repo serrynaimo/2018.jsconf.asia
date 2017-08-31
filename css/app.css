@@ -125,6 +125,7 @@ body:not(.small) #scroll {
   border: 2vw solid hsla(0,0%,100%,.1);
   /*-webkit-mask: linear-gradient(hsla(0,0%,0%,.1), hsla(0,0%,0%,1)  90% );*/
 
+  perspective-origin: 50% 60%;
   transform-style: preserve-3d;
   transform-origin: 50% 60%;
   transform: rotateX(85deg) rotateZ(0.0001deg) translate(20vw, 28vw);
