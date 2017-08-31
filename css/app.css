@@ -6,11 +6,7 @@ body {
   overflow: hidden;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
   position: relative;
-  background: radial-gradient(ellipse at bottom left, #021C7F 0, #111 100%);
-  -webkit-filter: brightness(1.2);
-  -ms-filter: brightness(1.2);
-  -moz-filter: brightness(1.2);
-  filter: brightness(1.2);
+  background: radial-gradient(ellipse at bottom left, #032abf 0, #111 100%);
 }
 
 #scroll {
@@ -106,10 +102,12 @@ body:not(.small) #scroll {
 }
 
 #intro > div {
-    width: 100%;
-    height: 100%;
-    perspective: 100vw;
-    transition: all 1s ease-in-out;
+  width: 100%;
+  height: 100%;
+
+  perspective: 100vw;
+
+  transition: all 1s ease-in-out;
 }
 
 #disc {
@@ -118,7 +116,6 @@ body:not(.small) #scroll {
   bottom: 49%;
   left: 60px;
   margin: -42vw;
-  transform-style: preserve-3d;
   box-sizing: border-box;
   background-clip: padding-box;
   background-color: rgba(0,0,0,0.2);
@@ -126,10 +123,13 @@ body:not(.small) #scroll {
   height: 84vw;
   border-radius: 42vw;
   border: 2vw solid hsla(0,0%,100%,.1);
-  perspective-origin: 50% 60%;
   /*-webkit-mask: linear-gradient(hsla(0,0%,0%,.1), hsla(0,0%,0%,1)  90% );*/
+
+  perspective-origin: 50% 60%;
+  transform-style: preserve-3d;
   transform-origin: 50% 60%;
   transform: rotateX(85deg) rotateZ(0.0001deg) translate(20vw, 28vw);
+
   transition: transform 1s cubic-bezier(.6,.2,0,.8);
   animation: move-in 2s cubic-bezier(.2,.2,0,.99) 1;
 }
@@ -146,9 +146,9 @@ body:not(.small) #scroll {
   opacity: .05;
   border: inherit;
   border-color: transparent;
+
   animation: spinner-spin 3s 1s cubic-bezier(.6,.2,0,.8) infinite,
              spinner-fade 3s 1s linear infinite;
-
 }
 
 #disc:before {
@@ -157,6 +157,7 @@ body:not(.small) #scroll {
 
 #disc:after {
   border-top-color: #56AAEB;
+
   animation-duration: 1.8s;
   animation-delay: 1.75s;
 }
@@ -186,9 +187,11 @@ body:not(.small) #scroll {
   height: 50%;
   right: 0;
   top: 0;
-  transform-origin: bottom left;
   backface-visibility: visible;
+
+  transform-origin: bottom left;
   transform: rotateZ(7deg) rotateX(-90deg) translateY(7.8%);
+
   animation: rotate-in 2s cubic-bezier(.2,.2,0,.9) 1;
 }
 
@@ -226,15 +229,18 @@ body:not(.small) #scroll {
   width: 30%;
   right: 5%;
   bottom: 21%;
-  transform-origin: bottom left;
   backface-visibility: visible;
+
+  transform-origin: bottom left;
   transform: rotateX(-90deg) translateY(7.8%) translateX(-3.8%);
+
   animation: fade-in 2s cubic-bezier(.6,.2,0,.8) 1;
   transition: transform 1s cubic-bezier(.6,.2,0,.8);
 }
 
 #info > span {
   display: block;
+
   transition: transform 1s ease-in-out;
 }
 
