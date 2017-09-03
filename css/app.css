@@ -129,7 +129,6 @@ body:not(.small) #scroll {
   border-radius: 42vw;
   border: 2vw solid hsla(0,0%,100%,.1);
   perspective-origin: 50% 60%;
-  /*-webkit-mask: linear-gradient(hsla(0,0%,0%,.1), hsla(0,0%,0%,1)  90% );*/
   transform-origin: 50% 60%;
   transform: rotateX(85deg) rotateZ(0.0001deg) translate(20vw, 28vw);
   transition: transform 1s cubic-bezier(.6,.2,0,.8);
@@ -258,6 +257,9 @@ body:not(.small) #scroll {
   -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
   overflow-y: scroll;
+  -ms-mask-image: linear-gradient(to bottom left, rgba(0, 0, 0, 1.0) 45%, transparent 75%);
+  -webkit-mask-image: linear-gradient(to bottom left, rgba(0, 0, 0, 1.0) 45%, transparent 75%);
+  mask-image: linear-gradient(to bottom left, rgba(0, 0, 0, 1.0) 45%, transparent 75%);
 }
 
 #bodyheight {
@@ -314,12 +316,6 @@ body:not(.small) #scroll {
     right: 20px;
     padding-bottom: 30vh;
     height: 70vh;
-  }
-
-  #body {
-    -ms-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 65%, transparent 75%);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 65%, transparent 75%);
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 65%, transparent 75%);
   }
 
   #scroll {
