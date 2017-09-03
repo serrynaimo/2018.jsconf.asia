@@ -270,7 +270,7 @@ body:not(.small) #scroll {
   right: 0;
   bottom: 0;
   width: 100vw;
-  height: 1000vh;
+  height: 800vh;
   overflow: hidden;
 }
 

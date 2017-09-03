@@ -65,7 +65,7 @@ $("#subscribeForm input[type='email']").on("focus", function() {
 var $pages = $('.page')
 var $body = document.getElementById('body')
 var check = function () {
-	var page = Math.min(Math.ceil($body.scrollTop / ($body.scrollHeight / $pages.length)), $pages.length - 1)
+	var page = Math.min(Math.ceil($body.scrollTop / ($body.scrollHeight / ($pages.length - 1))), $pages.length - 1)
 	if (page > 0) {
 		document.body.classList.add('small')
 	}
@@ -78,7 +78,7 @@ var check = function () {
 $body.addEventListener("scroll", check)
 $body.addEventListener("touchmove", check)
 $('#scroll').click(function () {
-	$body.scrollTop = $body.scrollHeight / $pages.length
+	$body.scrollTop = $body.scrollHeight / ($pages.length - 1)
 })
 
 var $disc = $('#disc')
