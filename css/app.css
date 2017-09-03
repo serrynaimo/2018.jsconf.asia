@@ -15,6 +15,7 @@ body {
 
 #scroll {
   position: absolute;
+  cursor: pointer;
   bottom: 40px;
   right: 24.8%;
   margin: 0 -100px;
@@ -99,6 +100,7 @@ body:not(.small) #scroll {
 }
 
 #intro {
+  z-index: 1;
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -249,42 +251,54 @@ body:not(.small) #scroll {
 
 #body {
   position: absolute;
-  z-index: 3;
+  top: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#bodyheight {
+  position: absolute;
+  word-break: break-all;
+  font-family: 'Consolas', 'Courier', monospace;
+  color: rgba(255,255,255,0.015);
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
-
-  scroll-snap-type: mandatory;
-  scroll-behaviour: smooth;
-  scroll-snap-points-y: repeat(100vh);
-
-  -webkit-scroll-snap-type: mandatory;
-  -webkit-scroll-snap-destination: 100vh 0;
-  -webkit-scroll-snap-points-y: repeat(100vh);
-  -webkit-overflow-scrolling: touch;
-
-  -ms-scroll-snap-destination: 100vh 0;
-  -ms-scroll-snap-type: mandatory;
-  -ms-scroll-snap-points-y: repeat(100vh);
-
+  height: 1000vh;
+  overflow: hidden;
 }
 
 
-#body > section {
+.page {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 50vw;
+  right: 0;
   height: 100vh;
-  -webkit-scroll-snap-align: start;
-  -ms-scroll-snap-align: start;
-  scroll-snap-align: start;
-  padding-left: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translateY(-100vh);
+  transition: all 0.5s ease-out;
+  opacity: 0;
 }
+
+.page.visible {
+  transform: translateY(0vh);
+  opacity: 1;
+}
+
+.page.visible + .page {
+  transform: translateY(100vh);
+}
+
 
 @media (max-width: 1023px) {
   .small #intro > div {
@@ -295,9 +309,9 @@ body:not(.small) #scroll {
     transform: translateX(8%);
   }
 
-  #body > section {
-    padding-left: 20px;
-    padding-right: 20px;
+  .page {
+    left: 20px;
+    right: 20px;
     padding-bottom: 30vh;
     height: 70vh;
   }

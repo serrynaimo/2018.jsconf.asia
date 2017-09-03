@@ -62,17 +62,24 @@ $("#subscribeForm input[type='email']").on("focus", function() {
     }
 });
 
+var $pages = $('.page')
 var $body = document.getElementById('body')
 var check = function () {
-	if ($body.scrollTop > 10) {
+	var page = Math.min(Math.ceil($body.scrollTop / ($body.scrollHeight / $pages.length)), $pages.length - 1)
+	if (page > 0) {
 		document.body.classList.add('small')
 	}
 	else {
 		document.body.classList.remove('small')
 	}
+	$pages.removeClass('visible')
+	$('.page' + page).addClass('visible')
 }
 $body.addEventListener("scroll", check)
 $body.addEventListener("touchmove", check)
+$('#scroll').click(function () {
+	$body.scrollTop = $body.scrollHeight / $pages.length
+})
 
 var $disc = $('#disc')
 var $debug = document.getElementById('debug')
