@@ -123,7 +123,6 @@ body:not(.small) #scroll {
   height: 84vw;
   border-radius: 42vw;
   border: 2vw solid hsla(0,0%,100%,.1);
-  /*-webkit-mask: linear-gradient(hsla(0,0%,0%,.1), hsla(0,0%,0%,1)  90% );*/
 
   perspective-origin: 50% 60%;
   transform-style: preserve-3d;
