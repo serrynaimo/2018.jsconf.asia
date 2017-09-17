@@ -6,11 +6,7 @@ body {
   overflow: hidden;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
   position: relative;
-  background: radial-gradient(ellipse at bottom left, #021C7F 0, #111 100%);
-  -webkit-filter: brightness(1.2);
-  -ms-filter: brightness(1.2);
-  -moz-filter: brightness(1.2);
-  filter: brightness(1.2);
+  background: radial-gradient(ellipse at bottom left, #021C7F 40%, #111 100%);
 }
 
 #scroll {
