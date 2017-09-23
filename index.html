@@ -45,51 +45,77 @@
 
     <section id="speakers">
       <div>
-        <p style="font-size: 0.85em;">
-          presenting
-        </p>
-        <div id="mask">
-          <ul id="list">
-            <li class="selected"><a href="#una"><img src="img/una.jpg" title="Una Kravets"/></a></li>
-            <li><a href="#jake"><img src="img/jake.jpg" title="Jake Archibald"/></a></li>
-            <li><a href="#martin"><img src="img/martin.jpg" title="Martin Splitt"/></a></li>
-            <li><a href="#istvan"><img src="img/istvan.jpg" title="István Szmozsánszky"/></a></li>
-            <li><a href="#more"><span id="morel">...</span></a></li>
-          </ul>
+        <div>
+          <p style="font-size: 0.85em;">
+            presenting
+          </p>
+          <div id="mask">
+            <ul id="list">
+              <li class="selected"><a href="#una"><img src="img/una.jpg" title="Una Kravets"/></a></li>
+              <li><a href="#jake"><img src="img/jake.jpg" title="Jake Archibald"/></a></li>
+              <li><a href="#martin"><img src="img/martin.jpg" title="Martin Splitt"/></a></li>
+              <li><a href="#istvan"><img src="img/istvan.jpg" title="István Szmozsánszky"/></a></li>
+              <li><a href="#more"><span id="morel">JS</span></a></li>
+            </ul>
+          </div>
         </div>
-        <div id="carousel">
-          <div style="width: 500%">
-            <div id="una" class="speaker">
-              <h3>Una Kravets</h3>
-              <p>Una is an international speaker, <a href="https://una.im" target="_blank">technical writer</a>, <a href="https://github.com/una" target="_blank">open source</a> advocate, and Senior UI Engineer at <a href="http://digitalocean.com" target="_blank">DigitalOcean</a>.
-                <br/>She’s written for various online publications such as A List Apart, Smashing Magazine, and Sitepoint. Una also co-hosts the <a href="http://toolsday.io" target="_blank">Toolsday</a> podcast and started both the DC and Austin Sass Meetups. She's a performance nerd, loves the open source community and listens to way too many audio books.</p>
-            </div>
-            <div id="jake" class="speaker">
-              <h3>Jake Archibald</h3>
-              <p>Jake is developer advocate for Google Chrome. He's one of the editors of the service worker spec, so he's into offline-first, push messaging and web performance.</p>
-            </div>
-            <div id="martin" class="speaker">
-              <h3>Martin Splitt</h3>
-              <p>Martin is open source contributor and web evangelist by heart from Zurich
-    with a decade experience from the trenches of software engineering in multiple fields.<br/>
-    He works as a software engineer at Archilogic in front- and backend.
-    He devotes his time to moving the web forward, fixing problems, building applications and systems
-    and breaking things for fun &amp; profit.</p>
-            </div>
-            <div id="istvan" class="speaker">
-              <h3>István Szmozsánszky</h3>
-              <p>István (or Flaki, for short) is a JavaScript world-domination prophet, engineer &amp; trainer from Budapest. He runs his own consulting business Skylark, is a Frontend Trainer @ DPC Consulting and a longtime Mozilla-contributor. He contributes to various open source projects like Firefox, Firefox OS, Rust, Servo and the Tessel Project.<br/>His favorite topics include service workers, progressive webapps, JavaScript's history, internals, and JS on microcontrollers.</p>
-            </div>
-            <div id="more" class="speaker">
-              <br/><br/><br/><br/>
-              <p style="text-align: center;">and many more to be announced ...</p>
+        <div>
+          <div id="carousel">
+            <div style="width: 500%">
+              <div id="una" class="speaker">
+                <div>
+                  <h3>Una Kravets</h3>
+                  <h4>on style</h4>
+                </div>
+                <p>Una is an international speaker, <a href="https://una.im" target="_blank">technical writer</a>, <a href="https://github.com/una" target="_blank">open source</a> advocate, and Senior UI Engineer at <a href="http://digitalocean.com" target="_blank">DigitalOcean</a>.
+                  <br/>She’s written for various online publications such as A List Apart, Smashing Magazine, and Sitepoint. Una also co-hosts the <a href="http://toolsday.io" target="_blank">Toolsday</a> podcast and started both the DC and Austin Sass Meetups. She's a performance nerd, loves the open source community and listens to way too many audio books.</p>
+              </div>
+              <div id="jake" class="speaker">
+                <div>
+                  <h3>Jake Archibald</h3>
+                  <h4>on web standards</h4>
+                </div>
+                <p>Jake is developer advocate for Google Chrome. He's one of the editors of the service worker spec, so he's into offline-first, push messaging and web performance.</p>
+              </div>
+              <div id="martin" class="speaker">
+                <div>
+                  <h3>Martin Splitt</h3>
+                  <h4>on the web with depth</h4>
+                </div>
+                <p>Martin is open source contributor, WebGL tinkerer and web evangelist by heart from Zurich
+      with a decade experience from the trenches of software engineering in multiple fields.<br/>
+      He works as a software engineer at Archilogic in front- and backend.
+      He devotes his time to moving the web forward, fixing problems, building applications and systems
+      and breaking things for fun &amp; profit.</p>
+              </div>
+              <div id="istvan" class="speaker">
+                <div>
+                  <h3>István Szmozsánszky</h3>
+                  <h4>on JS microcontrollers</h4>
+                </div>
+                <p>István (or Flaki, for short) is a JavaScript world-domination prophet, engineer &amp; trainer from Budapest. He runs his own consulting business Skylark, is a Frontend Trainer @ DPC Consulting and a longtime Mozilla-contributor. He contributes to various open source projects like Firefox, Firefox OS, Rust, Servo and the Tessel Project.<br/>His favorite topics include service workers, progressive webapps and JS on microcontrollers.</p>
+              </div>
+              <div id="more" class="speaker">
+                <div id="updates">
+                  <p>
+                    Stay updated on more announcements
+                  </p>
+                  <form id="subscribeForm" action="https://2012.jsconfasia.com/addsubscriber.php" method="get">
+                  <div class="input"><span><input type="text" name="fname" placeholder="First name" /><input type="email" name="email" placeholder="Email" /><input type="submit" value="Get updates" /></span></div>
+                  <div class="msg"><span></span></div>
+                  </form>
+                  <p>
+                  <a href="https://twitter.com/jsconfasia">Follow us on Twitter</a> &nbsp; <a href="https://facebook.com/jsconfasia">Join us on Facebook</a>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="about">
+    <section id="tickets">
       <p>
         <br/><br/>
         <span id="slogan">"It's a conference a year ahead of itself.<br/>It really is ... next years conference!"</span>
@@ -106,16 +132,15 @@
       </p>
     </section>
 
-    <section id="updates">
-      <div>
-        <form id="subscribeForm" action="https://2012.jsconfasia.com/addsubscriber.php" method="get">
-        <div class="input"><span><input type="text" name="fname" placeholder="First name" /><input type="email" name="email" placeholder="Email" /><input type="submit" value="Get updates" /></span></div>
-        <div class="msg"><span></span></div>
-        </form>
-
-        <p>
-        <a href="https://twitter.com/jsconfasia">Follow us on Twitter</a> &nbsp; <a href="https://facebook.com/jsconfasia">Join us on Facebook</a>
-        </p>
+    <section id="about">
+      <div style="text-align: center !important;">
+        <h3>JSCONF.ASIA 2018</h3>
+        <h4>2 days of talks</h4>
+        <p>at the Capitol Theatre</p>
+        <h4>+</h4>
+        <h4>1 community workshop day</h4>
+        <p>with 20+ sessions for you to choose from<br/>
+        at the Shangri La Rasa, Sentosa</p>
       </div>
     </section>
 
@@ -163,82 +188,53 @@
   ga('create', 'UA-31025490-15', 'auto');
   ga('send', 'pageview');
 
-    var start = new Date() //new Date('<?php echo date("r"); ?>')
-    var months = [0,0,0,0,0,0,0,0,0,'Oct','Nov','Dec','Jan']
-    var nextmonth = months[start.getMonth() + 1]
-    var target = start.getFullYear() < 2018 ? 'Mon, 1 ' + nextmonth + (nextmonth !== 'Jan' ? ' 2017' : ' 2018') + ' 00:00:00 +0800' : 'Wed, 1 Jan 2018 00:00:00 +0800'
-    CountDownTimer(target, 'countdown');
+  window.onwheel = function() {
+  	document.getElementById("body").style.webkitScrollSnapPointsY = "none";
+    document.getElementById("carousel").style.webkitScrollSnapPointsY = "none";
+  }
 
-    function CountDownTimer(dt, id)
-    {
-        var end = new Date(dt);
-
-        var _second = 1000;
-        var _minute = _second * 60;
-        var _hour = _minute * 60;
-        var _day = _hour * 24;
-        var startjs = new Date();
-        var diff = startjs - start;
-        var timer;
-
-        function showRemaining() {
-            var now = new Date();
-            var passed = now - startjs;
-            var distance = end - start - passed;
-            if (distance <= 0) {
-
-                clearInterval(timer);
-                document.getElementById("counter").style.display = "none"
-
-                return;
-            }
-            var days = Math.floor(distance / _day);
-            var hours = Math.floor((distance % _day) / _hour);
-            var minutes = Math.floor((distance % _hour) / _minute);
-            var seconds = Math.floor((distance % _minute) / _second);
-
-          if(seconds < 10)
-            seconds = "0" + seconds;
-
-          if(minutes < 10)
-            minutes = "0" + minutes;
-
-            document.getElementById(id).innerHTML = days > 0 ? (days > 1 ? days + ' DAYS ' : '1 DAY ') : ''
-            document.getElementById(id).innerHTML += hours + ':' + minutes + ':' + seconds;
-        }
-
-        timer = setInterval(showRemaining, 1000);
-    }
-
-    window.onwheel = function() {
-      document.getElementById("body").style.webkitScrollSnapPointsY = "none";
-    }
+  var $body = document.getElementById('body')
+  var checkS = function () {
+  	if ($body.scrollTop > 10) {
+  		document.body.classList.add('small')
+  	}
+  	else {
+  		document.body.classList.remove('small')
+  	}
+  }
+  $body.addEventListener("scroll", checkS)
+  $body.addEventListener("touchmove", checkS)
 
 
-    var $speakers = $('.speaker')
-    var $thumbs = $('#list li')
-    var $list = document.getElementById('list')
-    var $carousel = document.getElementById('carousel')
-    var selected = 0
+  var $speakers = $('.speaker')
+  var $thumbs = $('#list li')
+  var $list = document.getElementById('list')
+  var $carousel = document.getElementById('carousel')
+  var selected = 0
 
-    var checkX = function () {
-      var carouselw = $carousel.clientWidth
-      var scrollw = $carousel.scrollWidth
-      var scrollp = $carousel.scrollLeft
-      selected = (scrollp % carouselw < carouselw / 2) ? Math.floor(scrollp / carouselw) : Math.ceil(scrollp / carouselw)
-      $thumbs.removeClass('selected')
-      $($thumbs[selected]).addClass('selected')
-      $list.style.transform = 'translateX(' + (80 - selected * 40) + 'px)'
-    }
-    $carousel.addEventListener("scroll", checkX)
-    $carousel.addEventListener("touchmove", checkX)
+  var checkX = function () {
+  	var carouselw = $carousel.clientWidth
+  	var scrollw = $carousel.scrollWidth
+  	var scrollp = $carousel.scrollLeft
+  	selected = (scrollp % carouselw < carouselw / 2) ? Math.floor(scrollp / carouselw) : Math.ceil(scrollp / carouselw)
+  	$thumbs.removeClass('selected')
+  	$($thumbs[selected]).addClass('selected')
+  	$list.style.transform = 'translateX(' + (80 - selected * 40) + 'px)'
+  }
+  $carousel.addEventListener("scroll", checkX)
+  $carousel.addEventListener("touchmove", checkX)
 
-    var speaker = function (e) {
-      var carouselw = $carousel.clientWidth
-      e.originalEvent.preventDefault()
-      $carousel.scrollLeft = document.querySelector($(this).children('a')[0].hash).offsetLeft - $carousel.offsetLeft + 1
-    }
-    $thumbs.click(speaker)
+  var speakers = function (select) {
+    $carousel.scrollLeft = document.querySelector(select).offsetLeft - $carousel.offsetLeft + 1
+  }
+  var speakerc = function (e) {
+  	e.originalEvent.preventDefault()
+  	speakers($(this).children('a')[0].hash)
+    return false
+  }
+  $thumbs.click(speakerc)
+
+  speakers($($thumbs[Math.floor(Math.random() * $thumbs.length - 1)]).children('a')[0].hash)
 
   </script>
 </body>

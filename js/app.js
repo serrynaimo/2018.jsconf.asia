@@ -62,17 +62,55 @@ $("#subscribeForm input[type='email']").on("focus", function() {
     }
 });
 
-var $body = document.getElementById('body')
-var check = function () {
-	if ($body.scrollTop > 10) {
-		document.body.classList.add('small')
-	}
-	else {
-		document.body.classList.remove('small')
-	}
+
+var start = new Date() //new Date('<?php echo date("r"); ?>')
+var months = [0,0,0,0,0,0,0,0,0,'Oct','Nov','Dec','Jan']
+var nextmonth = months[start.getMonth() + 1]
+var target = start.getFullYear() < 2018 ? 'Mon, 1 ' + nextmonth + (nextmonth !== 'Jan' ? ' 2017' : ' 2018') + ' 00:00:00 +0800' : 'Wed, 1 Jan 2018 00:00:00 +0800'
+CountDownTimer(target, 'countdown');
+
+function CountDownTimer(dt, id)
+{
+		var end = new Date(dt);
+
+		var _second = 1000;
+		var _minute = _second * 60;
+		var _hour = _minute * 60;
+		var _day = _hour * 24;
+		var startjs = new Date();
+		var diff = startjs - start;
+		var timer;
+
+		function showRemaining() {
+				var now = new Date();
+				var passed = now - startjs;
+				var distance = end - start - passed;
+				if (distance <= 0) {
+
+						clearInterval(timer);
+						document.getElementById("counter").style.display = "none"
+
+						return;
+				}
+				var days = Math.floor(distance / _day);
+				var hours = Math.floor((distance % _day) / _hour);
+				var minutes = Math.floor((distance % _hour) / _minute);
+				var seconds = Math.floor((distance % _minute) / _second);
+
+			if(seconds < 10)
+				seconds = "0" + seconds;
+
+			if(minutes < 10)
+				minutes = "0" + minutes;
+
+				document.getElementById(id).innerHTML = days > 0 ? (days > 1 ? days + ' DAYS ' : '1 DAY ') : ''
+				document.getElementById(id).innerHTML += hours + ':' + minutes + ':' + seconds;
+		}
+
+		timer = setInterval(showRemaining, 1000);
 }
-$body.addEventListener("scroll", check)
-$body.addEventListener("touchmove", check)
+
+
 
 var $disc = $('#disc')
 var $debug = document.getElementById('debug')
