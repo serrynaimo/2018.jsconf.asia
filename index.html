@@ -51,17 +51,28 @@
           </p>
           <div id="mask">
             <ul id="list">
-              <li class="selected"><a href="#una"><img src="img/una.jpg" title="Una Kravets"/></a></li>
               <li><a href="#jake"><img src="img/jake.jpg" title="Jake Archibald"/></a></li>
+              <li><a href="#una"><img src="img/una.jpg" title="Una Kravets"/></a></li>
               <li><a href="#martin"><img src="img/martin.jpg" title="Martin Splitt"/></a></li>
+              <li><a href="#shirley"><img src="img/shirley.jpg" title="Shirley Wu"/></a></li>
+              <li><a href="#nadieh"><img src="img/nadieh.jpg" title="Nadieh Bremer"/></a></li>
               <li><a href="#istvan"><img src="img/istvan.jpg" title="István Szmozsánszky"/></a></li>
+              <li><a href="#huijin"><img src="img/huijin.jpg" title="Hui Jin Chen"/></a></li>
+              <li><a href="#jerome"><img src="img/jerome.jpg" title="Jerome Etienne"/></a></li>
               <li><a href="#more"><span id="morel">JS</span></a></li>
             </ul>
           </div>
         </div>
         <div>
           <div id="carousel">
-            <div style="width: 500%">
+            <div style="width: 900%">
+              <div id="jake" class="speaker">
+                <div>
+                  <h3>Jake Archibald</h3>
+                  <h4>on web standards</h4>
+                </div>
+                <p>Jake is developer advocate for Google Chrome. He's one of the editors of the service worker spec, so he's into offline-first, push messaging and web performance.</p>
+              </div>
               <div id="una" class="speaker">
                 <div>
                   <h3>Una Kravets</h3>
@@ -69,13 +80,6 @@
                 </div>
                 <p>Una is an international speaker, <a href="https://una.im" target="_blank">technical writer</a>, <a href="https://github.com/una" target="_blank">open source</a> advocate, and Senior UI Engineer at <a href="http://digitalocean.com" target="_blank">DigitalOcean</a>.
                   <br/>She’s written for various online publications such as A List Apart, Smashing Magazine, and Sitepoint. Una also co-hosts the <a href="http://toolsday.io" target="_blank">Toolsday</a> podcast and started both the DC and Austin Sass Meetups. She's a performance nerd, loves the open source community and listens to way too many audio books.</p>
-              </div>
-              <div id="jake" class="speaker">
-                <div>
-                  <h3>Jake Archibald</h3>
-                  <h4>on web standards</h4>
-                </div>
-                <p>Jake is developer advocate for Google Chrome. He's one of the editors of the service worker spec, so he's into offline-first, push messaging and web performance.</p>
               </div>
               <div id="martin" class="speaker">
                 <div>
@@ -88,12 +92,53 @@
       He devotes his time to moving the web forward, fixing problems, building applications and systems
       and breaking things for fun &amp; profit.</p>
               </div>
+              <div id="shirley" class="speaker">
+                <div>
+                  <h3>Shirley Wu</h3>
+                  <h4>on advanced D3</h4>
+                </div>
+                <p>Shirley Wu is a freelance software engineer specializing in data visualization.
+                  She combines her love of art, math, and code into colorful, interactive data visualizations.
+                  She enjoys finding fun insights in data and weaving them into stories and exploratory tools
+                  for the reader to discover.
+                  Her work can be found at <a href="http://www.sxywu.com" target="_blank">sxywu.com</a>.
+                </p>
+              </div>
+              <div id="nadieh" class="speaker">
+                <div>
+                  <h3>Nadieh Bremer</h3>
+                  <h4>on creative vizualization</h4>
+                </div>
+                <p>Nadieh is a graduated Astronomer, turned Data Scientist,
+                  turned self-taught Data Visualization Designer.
+                  After working for a consultancy &amp; fintech companies where she discovered
+                  her passion for the visualization of data, she's now working as a freelancing
+                  data visualization designer under the name Visual Cinnamon.
+                </p>
+              </div>
               <div id="istvan" class="speaker">
                 <div>
                   <h3>István Szmozsánszky</h3>
                   <h4>on JS microcontrollers</h4>
                 </div>
                 <p>István (or Flaki, for short) is a JavaScript world-domination prophet, engineer &amp; trainer from Budapest. He runs his own consulting business Skylark, is a Frontend Trainer @ DPC Consulting and a longtime Mozilla-contributor. He contributes to various open source projects like Firefox, Firefox OS, Rust, Servo and the Tessel Project.<br/>His favorite topics include service workers, progressive webapps and JS on microcontrollers.</p>
+              </div>
+              <div id="huijin" class="speaker">
+                <div>
+                  <h3>Hui Jin Chen</h3>
+                  <h4>on web fonts</h4>
+                </div>
+                <p>Hui Jing is a self-taught designer and developer with an inordinate love for CSS.
+                  Reducing lines of code in her web projects makes her extremely happy.
+                  She used to play basketball full-time and launched her web career during downtime
+                  between training sessions.</p>
+              </div>
+              <div id="jerome" class="speaker">
+                <div>
+                  <h3>Jerome Etienne</h3>
+                  <h4>on augmented reality</h4>
+                </div>
+                <p>Jerome is the creator of AR.js, making WebAR a reality! He is the author of the Learning Three.js blog and the 8th most active user on Github. He has been CTO at Daqri and is a hardcore Javascript and WebGL developer.</p>
               </div>
               <div id="more" class="speaker">
                 <div id="updates">
@@ -219,7 +264,7 @@
   	selected = (scrollp % carouselw < carouselw / 2) ? Math.floor(scrollp / carouselw) : Math.ceil(scrollp / carouselw)
   	$thumbs.removeClass('selected')
   	$($thumbs[selected]).addClass('selected')
-  	$list.style.transform = 'translateX(' + (80 - selected * 40) + 'px)'
+  	$list.style.transform = 'translateX(' + ((20 * ($thumbs.length - 1)) - selected * 40) + 'px)'
   }
   $carousel.addEventListener("scroll", checkX)
   $carousel.addEventListener("touchmove", checkX)
