@@ -443,6 +443,7 @@ a.button:hover:after {
   -ms-mask-image: linear-gradient(to right, transparent 2%, rgba(0, 0, 0, 1.0) 30%, rgba(0, 0, 0, 1.0) 70%, transparent 98%);
   -webkit-mask-image: linear-gradient(to right, transparent 2%, rgba(0, 0, 0, 1.0) 30%, rgba(0, 0, 0, 1.0) 70%, transparent 98%);
   mask-image: linear-gradient(to right, transparent 2%, rgba(0, 0, 0, 1.0) 30%, rgba(0, 0, 0, 1.0) 70%, transparent 98%);
+  overflow: hidden;
 }
 
 #list {
