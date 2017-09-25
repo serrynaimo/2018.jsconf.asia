@@ -425,6 +425,7 @@ a.button:hover:after {
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
+  width: calc(100% + 40px);
 }
 
 #speakers > div > div {
@@ -523,9 +524,9 @@ a.button:hover:after {
 .speaker {
   float: left;
   width: 50vw;
-  -webkit-scroll-snap-align: center;
-  -ms-scroll-snap-align: center;
-  scroll-snap-align: center;
+  -webkit-scroll-snap-align: start;
+  -ms-scroll-snap-align: start;
+  scroll-snap-align: start;
 }
 
 @media (max-width: 1023px) {
