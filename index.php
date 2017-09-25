@@ -43,34 +43,149 @@
 
     <section>&nbsp;</section>
 
-    <section id="about">
+    <section id="speakers">
+      <div>
+        <div>
+          <p style="font-size: 0.85em;">
+            presenting
+          </p>
+          <div id="mask">
+            <ul id="list">
+              <li><a href="#jake"><img src="img/jake.jpg" title="Jake Archibald"/></a></li>
+              <li><a href="#una"><img src="img/una.jpg" title="Una Kravets"/></a></li>
+              <li><a href="#martin"><img src="img/martin.jpg" title="Martin Splitt"/></a></li>
+              <li><a href="#shirley"><img src="img/shirley.jpg" title="Shirley Wu"/></a></li>
+              <li><a href="#nadieh"><img src="img/nadieh.jpg" title="Nadieh Bremer"/></a></li>
+              <li><a href="#istvan"><img src="img/istvan.jpg" title="István Szmozsánszky"/></a></li>
+              <li><a href="#huijin"><img src="img/huijin.jpg" title="Hui Jin Chen"/></a></li>
+              <li><a href="#jerome"><img src="img/jerome.jpg" title="Jerome Etienne"/></a></li>
+              <li><a href="#more"><span id="morel">JS</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div id="carousel">
+            <div style="width: 900%">
+              <div id="jake" class="speaker">
+                <div>
+                  <h3>Jake Archibald</h3>
+                  <h4>on web standards</h4>
+                </div>
+                <p>Jake is developer advocate for Google Chrome. He's one of the editors of the service worker spec, so he's into offline-first, push messaging and web performance.</p>
+              </div>
+              <div id="una" class="speaker">
+                <div>
+                  <h3>Una Kravets</h3>
+                  <h4>on style</h4>
+                </div>
+                <p>Una is an international speaker, <a href="https://una.im" target="_blank">technical writer</a>, <a href="https://github.com/una" target="_blank">open source</a> advocate, and Senior UI Engineer at <a href="http://digitalocean.com" target="_blank">DigitalOcean</a>.
+                  <br/>She’s written for various online publications such as A List Apart, Smashing Magazine, and Sitepoint. Una also co-hosts the <a href="http://toolsday.io" target="_blank">Toolsday</a> podcast and started both the DC and Austin Sass Meetups. She's a performance nerd, loves the open source community and listens to way too many audio books.</p>
+              </div>
+              <div id="martin" class="speaker">
+                <div>
+                  <h3>Martin Splitt</h3>
+                  <h4>on the web with depth</h4>
+                </div>
+                <p>Martin is open source contributor, WebGL tinkerer and web evangelist by heart from Zurich
+      with a decade experience from the trenches of software engineering in multiple fields.<br/>
+      He works as a software engineer at Archilogic in front- and backend.
+      He devotes his time to moving the web forward, fixing problems, building applications and systems
+      and breaking things for fun &amp; profit.</p>
+              </div>
+              <div id="shirley" class="speaker">
+                <div>
+                  <h3>Shirley Wu</h3>
+                  <h4>on advanced D3</h4>
+                </div>
+                <p>Shirley Wu is a freelance software engineer specializing in data visualization.
+                  She combines her love of art, math, and code into colorful, interactive data visualizations.
+                  She enjoys finding fun insights in data and weaving them into stories and exploratory tools
+                  for the reader to discover.
+                  Her work can be found at <a href="http://www.sxywu.com" target="_blank">sxywu.com</a>.
+                </p>
+              </div>
+              <div id="nadieh" class="speaker">
+                <div>
+                  <h3>Nadieh Bremer</h3>
+                  <h4>on creative vizualization</h4>
+                </div>
+                <p>Nadieh is a graduated Astronomer, turned Data Scientist,
+                  turned self-taught Data Visualization Designer.
+                  After working for a consultancy &amp; fintech companies where she discovered
+                  her passion for the visualization of data, she's now working as a freelancing
+                  data visualization designer under the name Visual Cinnamon.
+                </p>
+              </div>
+              <div id="istvan" class="speaker">
+                <div>
+                  <h3>István Szmozsánszky</h3>
+                  <h4>on JS microcontrollers</h4>
+                </div>
+                <p>István (or Flaki, for short) is a JavaScript world-domination prophet, engineer &amp; trainer from Budapest. He runs his own consulting business Skylark, is a Frontend Trainer @ DPC Consulting and a longtime Mozilla-contributor. He contributes to various open source projects like Firefox, Firefox OS, Rust, Servo and the Tessel Project.<br/>His favorite topics include service workers, progressive webapps and JS on microcontrollers.</p>
+              </div>
+              <div id="huijin" class="speaker">
+                <div>
+                  <h3>Hui Jin Chen</h3>
+                  <h4>on web fonts</h4>
+                </div>
+                <p>Hui Jing is a self-taught designer and developer with an inordinate love for CSS.
+                  Reducing lines of code in her web projects makes her extremely happy.
+                  She used to play basketball full-time and launched her web career during downtime
+                  between training sessions.</p>
+              </div>
+              <div id="jerome" class="speaker">
+                <div>
+                  <h3>Jerome Etienne</h3>
+                  <h4>on augmented reality</h4>
+                </div>
+                <p>Jerome is the creator of AR.js, making WebAR a reality! He is the author of the Learning Three.js blog and the 8th most active user on Github. He has been CTO at Daqri and is a hardcore Javascript and WebGL developer.</p>
+              </div>
+              <div id="more" class="speaker">
+                <div id="updates">
+                  <p>
+                    Stay updated on more announcements
+                  </p>
+                  <form id="subscribeForm" action="https://2012.jsconfasia.com/addsubscriber.php" method="get">
+                  <div class="input"><span><input type="text" name="fname" placeholder="First name" /><input type="email" name="email" placeholder="Email" /><input type="submit" value="Get updates" /></span></div>
+                  <div class="msg"><span></span></div>
+                  </form>
+                  <p>
+                  <a href="https://twitter.com/jsconfasia">Follow us on Twitter</a> &nbsp; <a href="https://facebook.com/jsconfasia">Join us on Facebook</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tickets">
       <p>
         <br/><br/>
         <span id="slogan">"It's a conference a year ahead of itself.<br/>It really is ... next years conference!"</span>
-        <span id="counter">
-          <br/><br/><br/>
-          Ticket sales start<br/><span id="countdown"></span><br/><br/><br/>
-          <a href="https://contribute.jsconf.asia" class="button contribute">CONTRIBUTE</a>
-        </span>
-        <span id="ticket" class="hidden">
+        <span id="ticket">
           <br/><br/><br/>
           <a href="https://events.pouchnation.com/event/jsconfasia2018" class="button ticket">GET YOUR TICKET</a>
+          <br/><br/>
+          <span id="counter">
+            Prices increase<br/><span id="countdown"></span>
+          </span>
           <br/><br/><br>
           <a href="https://contribute.jsconf.asia">Contribute to JSConf.Asia</a>
         </span>
       </p>
     </section>
 
-    <section id="updates">
-      <div>
-        <form id="subscribeForm" action="https://2012.jsconfasia.com/addsubscriber.php" method="get">
-        <div class="input"><span><input type="text" name="fname" placeholder="First name" /><input type="email" name="email" placeholder="Email" /><input type="submit" value="Get updates" /></span></div>
-        <div class="msg"><span></span></div>
-        </form>
-
-        <p>
-        <a href="https://twitter.com/jsconfasia">Follow us on Twitter</a> &nbsp; <a href="https://facebook.com/jsconfasia">Join us on Facebook</a>
-        </p>
+    <section id="about">
+      <div style="text-align: center !important;">
+        <h3>JSCONF.ASIA 2018</h3>
+        <h4>2 days of talks</h4>
+        <p>at the Capitol Theatre</p>
+        <h4>+</h4>
+        <h4>1 community workshop day</h4>
+        <p>with 20+ sessions for you to choose from<br/>
+        at the Shangri La Rasa, Sentosa</p>
       </div>
     </section>
 
@@ -118,55 +233,53 @@
   ga('create', 'UA-31025490-15', 'auto');
   ga('send', 'pageview');
 
+  window.onwheel = function() {
+  	document.getElementById("body").style.webkitScrollSnapPointsY = "none";
+    document.getElementById("carousel").style.webkitScrollSnapPointsY = "none";
+  }
 
-  CountDownTimer('Fri, 18 Aug 2017 15:00:00 +0800', 'countdown');
+  var $body = document.getElementById('body')
+  var checkS = function () {
+  	if ($body.scrollTop > 10) {
+  		document.body.classList.add('small')
+  	}
+  	else {
+  		document.body.classList.remove('small')
+  	}
+  }
+  $body.addEventListener("scroll", checkS)
+  $body.addEventListener("touchmove", checkS)
 
-    function CountDownTimer(dt, id)
-    {
-        var end = new Date(dt);
 
-        var _second = 1000;
-        var _minute = _second * 60;
-        var _hour = _minute * 60;
-        var _day = _hour * 24;
-        var start = new Date('<?php echo date("r"); ?>');
-        var startjs = new Date();
-        var diff = startjs - start;
-        var timer;
+  var $speakers = $('.speaker')
+  var $thumbs = $('#list li')
+  var $list = document.getElementById('list')
+  var $carousel = document.getElementById('carousel')
+  var selected = 0
 
-        function showRemaining() {
-            var now = new Date();
-            var passed = now - startjs;
-            var distance = end - start - passed;
-            if (distance <= 0) {
+  var checkX = function () {
+  	var carouselw = $carousel.clientWidth
+  	var scrollw = $carousel.scrollWidth
+  	var scrollp = $carousel.scrollLeft
+  	selected = (scrollp % carouselw < carouselw / 2) ? Math.floor(scrollp / carouselw) : Math.ceil(scrollp / carouselw)
+  	$thumbs.removeClass('selected')
+  	$($thumbs[selected]).addClass('selected')
+  	$list.style.transform = 'translateX(' + ((20 * ($thumbs.length - 1)) - selected * 40) + 'px)'
+  }
+  $carousel.addEventListener("scroll", checkX)
+  $carousel.addEventListener("touchmove", checkX)
 
-                clearInterval(timer);
-                document.getElementById("counter").style.display = "none"
-                document.getElementById("ticket").classList.remove("hidden")
+  var speakers = function (select) {
+    $carousel.scrollLeft = document.querySelector(select).offsetLeft - $carousel.offsetLeft + 1
+  }
+  var speakerc = function (e) {
+  	e.originalEvent.preventDefault()
+  	speakers($(this).children('a')[0].hash)
+    return false
+  }
+  $thumbs.click(speakerc)
 
-                return;
-            }
-            var days = Math.floor(distance / _day);
-            var hours = Math.floor((distance % _day) / _hour);
-            var minutes = Math.floor((distance % _hour) / _minute);
-            var seconds = Math.floor((distance % _minute) / _second);
-
-          if(seconds < 10)
-            seconds = "0" + seconds;
-
-          if(minutes < 10)
-            minutes = "0" + minutes;
-
-            document.getElementById(id).innerHTML = (days > 0) ? days + ' DAY ' : ''
-            document.getElementById(id).innerHTML += hours + ':' + minutes + ':' + seconds;
-        }
-
-        timer = setInterval(showRemaining, 1000);
-    }
-
-    window.onwheel = function() {
-      document.getElementById("body").style.webkitScrollSnapPointsY = "none";
-    }
+  speakers($($thumbs[Math.floor(Math.random() * $thumbs.length - 1)]).children('a')[0].hash)
 
   </script>
 </body>
