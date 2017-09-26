@@ -57,7 +57,7 @@
               <li><a href="#shirley"><img src="img/shirley.jpg" title="Shirley Wu"/></a></li>
               <li><a href="#nadieh"><img src="img/nadieh.jpg" title="Nadieh Bremer"/></a></li>
               <li><a href="#istvan"><img src="img/istvan.jpg" title="István Szmozsánszky"/></a></li>
-              <li><a href="#huijin"><img src="img/huijin.jpg" title="Hui Jin Chen"/></a></li>
+              <li><a href="#huijing"><img src="img/huijing.jpg" title="Hui Jing Chen"/></a></li>
               <li><a href="#jerome"><img src="img/jerome.jpg" title="Jerome Etienne"/></a></li>
               <li><a href="#more"><span id="morel">JS</span></a></li>
             </ul>
@@ -123,9 +123,9 @@
                 </div>
                 <p>István (or Flaki, for short) is a JavaScript world-domination prophet, engineer &amp; trainer from Budapest. He runs his own consulting business Skylark, is a Frontend Trainer @ DPC Consulting and a longtime Mozilla-contributor. He contributes to various open source projects like Firefox, Firefox OS, Rust, Servo and the Tessel Project.<br/>His favorite topics include service workers, progressive webapps and JS on microcontrollers.</p>
               </div>
-              <div id="huijin" class="speaker">
+              <div id="huijing" class="speaker">
                 <div>
-                  <h3>Hui Jin Chen</h3>
+                  <h3>Hui Jing Chen</h3>
                   <h4>on web fonts</h4>
                 </div>
                 <p>Hui Jing is a self-taught designer and developer with an inordinate love for CSS.
