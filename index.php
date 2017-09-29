@@ -26,7 +26,7 @@
   <div id="scroll">Scroll for more</div>
 
   <code id="layer">
-    <a href="https://mdn.mozilla.com/matrix3d" target="_blank">matrix3d</a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d" target="_blank">matrix3d</a>
     <div id="debug"></div>
   </code>
 
