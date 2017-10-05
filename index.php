@@ -72,6 +72,7 @@
                   <h4>on web standards</h4>
                 </div>
                 <p>Jake is developer advocate for Google Chrome. He's one of the editors of the service worker spec, so he's into offline-first, push messaging and web performance.</p>
+                <a href="https://twitter.com/jaffathecake" target="_blank" class="twitter">jaffathecake</a>
               </div>
               <div id="una" class="speaker">
                 <div>
@@ -80,6 +81,7 @@
                 </div>
                 <p>Una is an international speaker, <a href="https://una.im" target="_blank">technical writer</a>, <a href="https://github.com/una" target="_blank">open source</a> advocate, and Senior UI Engineer at <a href="http://digitalocean.com" target="_blank">DigitalOcean</a>.
                   <br/>She’s written for various online publications such as A List Apart, Smashing Magazine, and Sitepoint. Una also co-hosts the <a href="http://toolsday.io" target="_blank">Toolsday</a> podcast and started both the DC and Austin Sass Meetups. She's a performance nerd, loves the open source community and listens to way too many audio books.</p>
+                  <a href="https://twitter.com/una" target="_blank" class="twitter">una</a>
               </div>
               <div id="martin" class="speaker">
                 <div>
@@ -91,6 +93,7 @@
       He works as a software engineer at Archilogic in front- and backend.
       He devotes his time to moving the web forward, fixing problems, building applications and systems
       and breaking things for fun &amp; profit.</p>
+                <a href="https://twitter.com/g33konaut" target="_blank" class="twitter">g33konaut</a>
               </div>
               <div id="shirley" class="speaker">
                 <div>
@@ -103,6 +106,7 @@
                   for the reader to discover.
                   Her work can be found at <a href="http://www.sxywu.com" target="_blank">sxywu.com</a>.
                 </p>
+                <a href="https://twitter.com/sxywu" target="_blank" class="twitter">sxywu</a>
               </div>
               <div id="nadieh" class="speaker">
                 <div>
@@ -115,6 +119,7 @@
                   her passion for the visualization of data, she's now working as a freelancing
                   data visualization designer under the name Visual Cinnamon.
                 </p>
+                <a href="https://twitter.com/NadiehBremer" target="_blank" class="twitter">NadiehBremer</a>
               </div>
               <div id="istvan" class="speaker">
                 <div>
@@ -122,6 +127,7 @@
                   <h4>on JS microcontrollers</h4>
                 </div>
                 <p>István (or Flaki, for short) is a JavaScript world-domination prophet, engineer &amp; trainer from Budapest. He runs his own consulting business Skylark, is a Frontend Trainer @ DPC Consulting and a longtime Mozilla-contributor. He contributes to various open source projects like Firefox, Firefox OS, Rust, Servo and the Tessel Project.<br/>His favorite topics include service workers, progressive webapps and JS on microcontrollers.</p>
+                <a href="https://twitter.com/slsoftworks" target="_blank" class="twitter">slsoftworks</a>
               </div>
               <div id="huijing" class="speaker">
                 <div>
@@ -132,6 +138,7 @@
                   Reducing lines of code in her web projects makes her extremely happy.
                   She used to play basketball full-time and launched her web career during downtime
                   between training sessions.</p>
+                  <a href="https://twitter.com/hj_chen" target="_blank" class="twitter">hj_chen</a>
               </div>
               <div id="jerome" class="speaker">
                 <div>
@@ -139,6 +146,7 @@
                   <h4>on augmented reality</h4>
                 </div>
                 <p>Jerome is the creator of AR.js, making WebAR a reality! He is the author of the Learning Three.js blog and the 8th most active user on Github. He has been CTO at Daqri and is a hardcore Javascript and WebGL developer.</p>
+                <a href="https://twitter.com/jerome_etienne" target="_blank" class="twitter">jerome_etienne</a>
               </div>
               <div id="more" class="speaker">
                 <div id="updates">
@@ -264,7 +272,7 @@
   	selected = (scrollp % carouselw < carouselw / 2) ? Math.floor(scrollp / carouselw) : Math.ceil(scrollp / carouselw)
   	$thumbs.removeClass('selected')
   	$($thumbs[selected]).addClass('selected')
-  	$list.style.transform = 'translateX(' + ((20 * ($thumbs.length - 1)) - selected * 40) + 'px)'
+  	$list.style.transform = 'translateX(' + ((28 * ($thumbs.length - 1)) - selected * 57.2) + 'px)'
   }
   $carousel.addEventListener("scroll", checkX)
   $carousel.addEventListener("touchmove", checkX)
