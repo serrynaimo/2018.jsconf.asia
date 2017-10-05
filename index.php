@@ -272,7 +272,7 @@
   	selected = (scrollp % carouselw < carouselw / 2) ? Math.floor(scrollp / carouselw) : Math.ceil(scrollp / carouselw)
   	$thumbs.removeClass('selected')
   	$($thumbs[selected]).addClass('selected')
-  	$list.style.transform = 'translateX(' + ((28 * ($thumbs.length - 1)) - selected * 57.2) + 'px)'
+  	$list.style.transform = 'translateX(' + ((29 * ($thumbs.length - 1)) - selected * 57.5) + 'px)'
   }
   $carousel.addEventListener("scroll", checkX)
   $carousel.addEventListener("touchmove", checkX)
