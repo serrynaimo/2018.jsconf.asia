@@ -128,6 +128,7 @@ var change = function (e) {
 	}
 }
 var keypress = function (e) {
+	e.stopPropagation()
 	n = e.currentTarget.name
 	if (e.key === 'Enter') {
 		change(e)

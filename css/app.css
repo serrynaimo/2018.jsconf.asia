@@ -289,9 +289,9 @@ body:not(.small) #scroll {
 
 #body > section {
   height: 100vh;
-  -webkit-scroll-snap-align: center;
-  -ms-scroll-snap-align: center;
-  scroll-snap-align: center;
+  -webkit-scroll-snap-align: start;
+  -ms-scroll-snap-align: start;
+  scroll-snap-align: start;
   padding-left: 50%;
   display: flex;
   justify-content: center;
@@ -299,6 +299,11 @@ body:not(.small) #scroll {
 }
 
 @media (max-width: 1023px) {
+
+  .desktop {
+    display: none;
+  }
+
   .small #intro > div {
     transform: translate(0%, 30%) scale(0.5);
   }

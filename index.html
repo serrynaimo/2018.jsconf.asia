@@ -23,7 +23,7 @@
 </head>
 <body>
 
-  <div id="scroll">Scroll for more</div>
+  <div id="scroll">Scroll for more<br/><span class="desktop">or use arrow keys</span></div>
 
   <code id="layer">
     <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d" target="_blank">matrix3d</a>
@@ -270,13 +270,23 @@
   	var scrollw = $carousel.scrollWidth
   	var scrollp = $carousel.scrollLeft
   	selected = (scrollp % carouselw < carouselw / 2) ? Math.floor(scrollp / carouselw) : Math.ceil(scrollp / carouselw)
-  	$thumbs.removeClass('selected')
-  	$($thumbs[selected]).addClass('selected')
-  	$list.style.transform = 'translateX(' + ((29 * ($thumbs.length - 1)) - selected * 57.5) + 'px)'
+    selects(selected)
   }
   $carousel.addEventListener("scroll", checkX)
   $carousel.addEventListener("touchmove", checkX)
 
+  var selects = function (speaker) {
+    if(speaker < 0) {
+      speaker = selected = 0
+    }
+    else if(speaker >= $thumbs.length - 1) {
+      speaker = selected = $thumbs.length - 1
+    }
+    $thumbs.removeClass('selected')
+  	$($thumbs[speaker]).addClass('selected')
+  	$list.style.transform = 'translateX(' + ((29 * ($thumbs.length - 1)) - speaker * 57.5) + 'px)'
+
+  }
   var speakers = function (select) {
     $carousel.scrollLeft = document.querySelector(select).offsetLeft - $carousel.offsetLeft + 1
   }
@@ -288,6 +298,29 @@
   $thumbs.click(speakerc)
 
   speakers($($thumbs[Math.floor(Math.random() * $thumbs.length - 1)]).children('a')[0].hash)
+
+  document.addEventListener("keydown", function (e) {
+    e.preventDefault()
+    var h = document.body.clientHeight
+    var p = Math.round($body.scrollTop / h)
+    if(e.key === "ArrowUp") {
+      $body.scrollTop = (p - 1) * h
+    }
+    else if(e.key === "ArrowDown") {
+      $body.scrollTop = (p + 1) * h
+    }
+    else if(p === 1){
+      if(e.key === "ArrowLeft") {
+        selects(--selected)
+        speakers($($thumbs[selected]).children('a')[0].hash)
+      }
+      else if(e.key === "ArrowRight") {
+        selects(++selected)
+        speakers($($thumbs[selected]).children('a')[0].hash)
+      }
+    }
+    return false
+  })
 
   </script>
 </body>
