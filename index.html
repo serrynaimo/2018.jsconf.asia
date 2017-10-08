@@ -43,14 +43,14 @@
 
     <section>&nbsp;</section>
 
-    <section id="speakers">
+    <section class="carouselc" id="speakers">
       <div>
         <div>
           <p style="font-size: 0.85em;">
             presenting
           </p>
-          <div id="mask">
-            <ul id="list">
+          <div class="mask">
+            <ul class="list">
               <li><a href="#jake"><img src="img/jake.jpg" title="Jake Archibald"/></a></li>
               <li><a href="#una"><img src="img/una.jpg" title="Una Kravets"/></a></li>
               <li><a href="#martin"><img src="img/martin.jpg" title="Martin Splitt"/></a></li>
@@ -59,12 +59,12 @@
               <li><a href="#istvan"><img src="img/istvan.jpg" title="István Szmozsánszky"/></a></li>
               <li><a href="#huijing"><img src="img/huijing.jpg" title="Hui Jing Chen"/></a></li>
               <li><a href="#jerome"><img src="img/jerome.jpg" title="Jerome Etienne"/></a></li>
-              <li><a href="#more"><span id="morel">JS</span></a></li>
+              <li><a href="#more"><span class="round">JS</span></a></li>
             </ul>
           </div>
         </div>
         <div>
-          <div id="carousel">
+          <div class="carousel">
             <div style="width: 900%">
               <div id="jake" class="speaker">
                 <div>
@@ -197,6 +197,44 @@
       </div>
     </section>
 
+    <section class="carouselc" id="events">
+      <div>
+        <div>
+          <p style="font-size: 0.85em;">
+            DevFest.Asia 2018 events
+          </p>
+          <div class="mask">
+            <ul class="list">
+              <li><a href="#oct25"><span class="round"><span class="day">25</span><span class="month">OCT</span></span></a></li>
+              <li><a href="#jan24"><span class="round"><span class="day">24</span><span class="month">JAN</span></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="carousel">
+            <div style="width: 200%">
+              <div id="oct25" class="speaker">
+                <div>
+                  <h3>Becoming a conference speaker</h3>
+                  <h4>7pm at Collision 8</h4>
+                </div>
+                <p>Considering giving a talk at JSConf.Asia or any other technical conference, but not sure what to talk about? Or simply can't get started on writing the talk proposal itself? Come join us at the very first RFP & speaker workshop in Singapore, where you will meet conference speakers and speakers to-be.</p>
+                <a href="https://www.eventnook.com/event/becomingatechconferencespeaker/home" target="_blank" class="external">Registration and more info</a>
+              </div>
+              <div id="jan24" class="speaker">
+                <div>
+                  <h3>Talk.js</h3>
+                  <h4>7pm at PayPal</h4>
+                </div>
+                <p>Singapore's premier JavaScript meetup</p>
+                <a href="https://www.meetup.com/Singapore-JS/events/" target="_blank" class="external">Registration and more info</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="footer">
       <div>
         <div>
@@ -243,7 +281,8 @@
 
   window.onwheel = function() {
   	document.getElementById("body").style.webkitScrollSnapPointsY = "none";
-    document.getElementById("carousel").style.webkitScrollSnapPointsY = "none";
+    document.querySelector("#speakers .carousel").style.webkitScrollSnapPointsY = "none";
+    document.querySelector("#events .carousel").style.webkitScrollSnapPointsY = "none";
   }
 
   var $body = document.getElementById('body')
@@ -260,44 +299,84 @@
 
 
   var $speakers = $('.speaker')
-  var $thumbs = $('#list li')
-  var $list = document.getElementById('list')
-  var $carousel = document.getElementById('carousel')
-  var selected = 0
+  var $sthumbs = $('#speakers li')
+  var $ethumbs = $('#events li')
+  var $slist = document.querySelector('#speakers .list')
+  var $elist = document.querySelector('#events .list')
+  var $scarousel = document.querySelector('#speakers .carousel')
+  var $ecarousel = document.querySelector('#events .carousel')
+  var selecteds = selectede = 0
 
-  var checkX = function () {
-  	var carouselw = $carousel.clientWidth
-  	var scrollw = $carousel.scrollWidth
-  	var scrollp = $carousel.scrollLeft
-  	selected = (scrollp % carouselw < carouselw / 2) ? Math.floor(scrollp / carouselw) : Math.ceil(scrollp / carouselw)
-    selects(selected)
+  var scheckX = function () {
+  	var carouselw = $scarousel.clientWidth
+  	var scrollw = $scarousel.scrollWidth
+  	var scrollp = $scarousel.scrollLeft
+  	selecteds = (scrollp % carouselw < carouselw / 2) ? Math.floor(scrollp / carouselw) : Math.ceil(scrollp / carouselw)
+    selects(selecteds)
   }
-  $carousel.addEventListener("scroll", checkX)
-  $carousel.addEventListener("touchmove", checkX)
+  $scarousel.addEventListener("scroll", scheckX)
+  $scarousel.addEventListener("touchmove", scheckX)
+
+  var echeckX = function () {
+  	var carouselw = $ecarousel.clientWidth
+  	var scrollw = $ecarousel.scrollWidth
+  	var scrollp = $ecarousel.scrollLeft
+  	selectede = (scrollp % carouselw < carouselw / 2) ? Math.floor(scrollp / carouselw) : Math.ceil(scrollp / carouselw)
+    selecte(selectede)
+  }
+  $ecarousel.addEventListener("scroll", echeckX)
+  $ecarousel.addEventListener("touchmove", echeckX)
 
   var selects = function (speaker) {
     if(speaker < 0) {
-      speaker = selected = 0
+      speaker = selecteds = 0
     }
-    else if(speaker >= $thumbs.length - 1) {
-      speaker = selected = $thumbs.length - 1
+    else if(speaker >= $sthumbs.length - 1) {
+      speaker = selecteds = $sthumbs.length - 1
     }
-    $thumbs.removeClass('selected')
-  	$($thumbs[speaker]).addClass('selected')
-  	$list.style.transform = 'translateX(' + ((29 * ($thumbs.length - 1)) - speaker * 57.5) + 'px)'
+    $sthumbs.removeClass('selected')
+  	$($sthumbs[speaker]).addClass('selected')
+  	$slist.style.transform = 'translateX(' + ((29 * ($sthumbs.length - 1)) - speaker * 57.5) + 'px)'
 
   }
   var speakers = function (select) {
-    $carousel.scrollLeft = document.querySelector(select).offsetLeft - $carousel.offsetLeft + 1
+    $scarousel.scrollLeft = document.querySelector(select).offsetLeft - $scarousel.offsetLeft + 1
   }
   var speakerc = function (e) {
   	e.originalEvent.preventDefault()
   	speakers($(this).children('a')[0].hash)
     return false
   }
-  $thumbs.click(speakerc)
+  $sthumbs.click(speakerc)
 
-  speakers($($thumbs[Math.floor(Math.random() * $thumbs.length - 1)]).children('a')[0].hash)
+
+  var selecte = function (ev) {
+    if(ev < 0) {
+      ev = selectede = 0
+    }
+    else if(ev >= $ethumbs.length - 1) {
+      ev = selectede = $ethumbs.length - 1
+    }
+    $ethumbs.removeClass('selected')
+    $($ethumbs[ev]).addClass('selected')
+    $elist.style.transform = 'translateX(' + ((29 * ($ethumbs.length - 1)) - ev * 57.5) + 'px)'
+
+  }
+  var events = function (select) {
+    $ecarousel.scrollLeft = document.querySelector(select).offsetLeft - $ecarousel.offsetLeft + 1
+  }
+  var eventc = function (e) {
+    e.originalEvent.preventDefault()
+    events($(this).children('a')[0].hash)
+    return false
+  }
+  $ethumbs.click(eventc)
+
+  setTimeout(function () {
+    speakers($($sthumbs[Math.floor(Math.random() * $sthumbs.length - 1)]).children('a')[0].hash)
+    events($($ethumbs[0]).children('a')[0].hash)
+  },1)
+
 
   document.addEventListener("keydown", function (e) {
     e.preventDefault()
@@ -311,12 +390,22 @@
     }
     else if(p === 1){
       if(e.key === "ArrowLeft") {
-        selects(--selected)
-        speakers($($thumbs[selected]).children('a')[0].hash)
+        selects(--selecteds)
+        speakers($($sthumbs[selecteds]).children('a')[0].hash)
       }
       else if(e.key === "ArrowRight") {
-        selects(++selected)
-        speakers($($thumbs[selected]).children('a')[0].hash)
+        selects(++selecteds)
+        speakers($($sthumbs[selecteds]).children('a')[0].hash)
+      }
+    }
+    else if(p === 4){
+      if(e.key === "ArrowLeft") {
+        selecte(--selectede)
+        events($($ethumbs[selectede]).children('a')[0].hash)
+      }
+      else if(e.key === "ArrowRight") {
+        selecte(++selectede)
+        events($($ethumbs[selectede]).children('a')[0].hash)
       }
     }
     return false

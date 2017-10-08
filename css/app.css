@@ -22,7 +22,6 @@ body {
   letter-spacing: 2px;
   font-size: 0.7em;
   transition: opacity .3s ease-out;
-  opacity: 0;
 }
 
 #slogan {
@@ -55,6 +54,10 @@ body {
 
 #debug input:active, #debug input:focus {
   outline: none;
+}
+
+body.small #scroll {
+  opacity: 0;
 }
 
 body:not(.small) #scroll {
@@ -130,14 +133,14 @@ body:not(.small) #scroll {
   animation: move-in 2s cubic-bezier(.2,.2,0,.99) 1;
 }
 
-#list li {
+.list li {
   position: relative;
 }
 
 #disc:before,
 #disc:after,
-#list li.selected:before,
-#list li.selected:after {
+.list li.selected:before,
+.list li.selected:after {
   content: "";
   position: absolute;
   margin: -2vw;
@@ -153,8 +156,8 @@ body:not(.small) #scroll {
 
 }
 
-#list li.selected:before,
-#list li.selected:after {
+.list li.selected:before,
+.list li.selected:after {
   left: 5px;
   border: 4px solid transparent;
   margin: -4px !important;
@@ -163,11 +166,11 @@ body:not(.small) #scroll {
   border-radius: 50%;
 }
 
-#disc:before, #list li.selected:before {
+#disc:before, .list li.selected:before {
   border-top-color: #FFED2A;
 }
 
-#disc:after, #list li.selected:after {
+#disc:after, .list li.selected:after {
   border-top-color: #56AAEB;
   animation-duration: 1.8s;
   animation-delay: 1.75s;
@@ -425,7 +428,7 @@ a.button:hover:after {
 }
 
 
-#speakers > div {
+.carouselc > div {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -433,25 +436,25 @@ a.button:hover:after {
   width: calc(100% + 40px);
 }
 
-#speakers > div > div {
+.carouselc > div > div {
   flex: 1;
 }
 
-#speakers > div > div:first-child {
+.carouselc > div > div:first-child {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
 
-#mask {
+.mask {
   -ms-mask-image: linear-gradient(to right, transparent 2%, rgba(0, 0, 0, 1.0) 30%, rgba(0, 0, 0, 1.0) 70%, transparent 98%);
   -webkit-mask-image: linear-gradient(to right, transparent 2%, rgba(0, 0, 0, 1.0) 30%, rgba(0, 0, 0, 1.0) 70%, transparent 98%);
   mask-image: linear-gradient(to right, transparent 2%, rgba(0, 0, 0, 1.0) 30%, rgba(0, 0, 0, 1.0) 70%, transparent 98%);
   overflow: hidden;
 }
 
-#list {
+.list {
   margin: 10px auto 22px;
   padding: 0;
   height: 128px;
@@ -463,48 +466,63 @@ a.button:hover:after {
   transition: transform .2s linear;
 }
 
-#list a {
+.list a {
   color: #fff;
   text-decoration: none;
 }
 
-#list li {
+.list li {
   list-style-type: none;
   padding: 5px;
 }
 
-#list img {
+.list img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   transition: all .2s linear;
 }
 
-#list li:not(.selected) img {
+.list li:not(.selected) img {
   width: 48px;
   height: 48px;
 }
 
-#morel {
+.round {
   position: relative;
   width: 48px;
   height: 48px;
   float: right;
   border-radius: 50%;
-  border: 1px solid #fff;
+  border: 1px solid rgba(255,255,255,.5);
+  color: rgba(255,255,255,.5);
   line-height: 48px;
-  opacity: .5;
   text-align: center;
   transition: all .2s linear;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.3em;
 }
 
-#list li.selected #morel {
+.round .day {
+  display: block;
+  line-height: 1.1em;
+}
+.round .month {
+  line-height: 1em;
+  font-size: 0.6em;
+  display: block;
+}
+
+.list li.selected .round {
   width: 118px;
   height: 118px;
   line-height: 118px;
+  color: #fff;
 }
 
-#carousel {
+.carousel {
   -ms-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1.0) 2%, rgba(0, 0, 0, 1.0) 98%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1.0) 2%, rgba(0, 0, 0, 1.0) 98%, transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1.0) 2%, rgba(0, 0, 0, 1.0) 98%, transparent 100%);
@@ -560,11 +578,15 @@ h4 {
   display: inline;
 }
 
-.speaker .twitter {
+.speaker .twitter, .speaker .external {
   display: block;
   font-size: 0.8em;
   padding: 0.6em 0 0;
   color: #fff;
+}
+
+.speaker .external:before {
+  content: "» "
 }
 
 .speaker .twitter:before {
