@@ -286,6 +286,7 @@
   }
 
   var $body = document.getElementById('body')
+  var allowAnim = false
   var checkS = function () {
     var h = document.body.clientHeight
     var p = Math.round($body.scrollTop / h)
@@ -297,16 +298,21 @@
   		document.body.classList.remove('small')
   	}
 
-    if (p === 4) {
+    if (p === 4 && allowAnim) {
       document.body.classList.add('devfest')
     }
     else {
       document.body.classList.remove('devfest')
     }
   }
+
   $body.addEventListener("scroll", checkS)
   $body.addEventListener("touchmove", checkS)
 
+  setTimeout(function () {
+    allowAnim = true
+    checkS()
+  }, 2000)
 
   var $speakers = $('.speaker')
   var $sthumbs = $('#speakers li')
