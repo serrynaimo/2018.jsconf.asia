@@ -65,7 +65,7 @@
         </div>
         <div>
           <div class="carousel">
-            <div style="width: 900%">
+            <div id="scarousel">
               <div id="jake" class="speaker">
                 <div>
                   <h3>Jake Archibald</h3>
@@ -215,48 +215,42 @@
         </div>
         <div>
           <div class="carousel">
-            <div style="width: 400%">
-              <div id="oct25" class="speaker">
+            <div id="ecarousel"><div id="oct25" class="speaker">
                 <div>
                   <h3>Becoming a conference speaker</h3>
                   <h4>7pm at Collision 8</h4>
                 </div>
                 <p>Considering giving a talk at JSConf.Asia or any other technical conference, but not sure what to talk about? Or simply can't get started on writing the talk proposal itself? Come join us at the very first RFP & speaker workshop in Singapore, where you will meet conference speakers and speakers to-be.</p>
                 <a href="https://www.eventnook.com/event/becomingatechconferencespeaker/home" target="_blank" class="external">Registration and more info</a>
-              </div>
-              <div id="jan24" class="speaker">
+              </div><div id="jan24" class="speaker">
                 <div>
                   <h3>Talk.js</h3>
                   <h4>7pm at PayPal</h4>
                 </div>
                 <p>Singapore's premier JavaScript meetup</p>
                 <a href="https://www.meetup.com/Singapore-JS/events/" target="_blank" class="external">Registration and more info</a>
-              </div>
-              <div id="jan25" class="speaker">
+              </div><div id="jan25" class="speaker">
                 <div>
                   <h3>Code In The Dark</h3>
                   <h4>6:30pm at Canvas</h4>
                 </div>
                 <p>Back due to popular demand: Test how good your HTML and CSS skills really are: Recreate a website from scratch in a club in front within 15min and win amazing prizes! Drinks are on the house for all our JSConf.Asia attendees!</p>
                 <a href="http://codeinthedark.com" target="_blank" class="external">No registration required</a>
-              </div>
-            <!--<div id="jan27" class="speaker">
+              </div><!--<div id="jan27" class="speaker">
               <div>
                 <h3>JSConf.Asia After-Party</h3>
                 <h4>6:30pm</h4>
               </div>
               <p>he JSConf.Asia 2016 after party for conference attendees and all of you that want to join in for the official 5th anniversary celebration!</p>
               <a href="#" onclick="return false" target="_blank" class="external">No registration required</a>
-            </div>//-->
-              <div id="jan28" class="speaker">
+            </div>//--><div id="jan28" class="speaker">
                 <div>
                   <h3>KopiJS</h3>
                   <h4>11am</h4>
                 </div>
                 <p>It's a long tradition: Post conference Kopi! KopiJS is a casual and relaxing coffee/brunch hangout among all developers, designers, makers and like-minded people. No JS required.</p>
                 <a href="https://kopijs.org" target="_blank" class="external">No registration required</a>
-              </div>
-            </div>
+              </div></div>
           </div>
         </div>
       </div>
@@ -289,7 +283,13 @@
     </section>
   </section>
 
-
+  <script>
+    var startdate = new Date('<?php echo date("r"); ?>')
+    if(startdate.toString() === "Invalid Date") {
+      startdate = new Date()
+    }
+    var months = [0,0,0,0,0,0,0,0,0,'Oct','Nov','Dec','Jan']
+  </script>
 
   <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.js"></script>
   <script type="text/javascript">window.jQuery || document.write('<script src="./js/jquery.min.js">\x3C/script>')</script>
@@ -350,6 +350,9 @@
   var $scarousel = document.querySelector('#speakers .carousel')
   var $ecarousel = document.querySelector('#events .carousel')
   var selecteds = selectede = 0
+
+  document.getElementById('scarousel').style.width = ($sthumbs.length * 100) + "%"
+  document.getElementById('ecarousel').style.width = ($ethumbs.length * 100) + "%"
 
   var scheckX = function () {
   	var carouselw = $scarousel.clientWidth
@@ -417,9 +420,22 @@
   $ethumbs.click(eventc)
 
   setTimeout(function () {
+    var i = 0
+    var l
+    while (i < $ethumbs.length) {
+      l = $($ethumbs[i]).children('a')[0]
+      var m = l.hash.substr(1,3)
+      var d = l.hash.substr(4,2)
+      var c = new Date("Mon " + m + " " + d + " 201" + (m == "jan" ? "8" : "7") + " 23:59:59 GMT+0800")
+      if(c.getTime() > startdate.getTime()) {
+        i = $ethumbs.length
+      } else {
+        i++
+      }
+    }
     speakers($($sthumbs[Math.floor(Math.random() * $sthumbs.length - 1)]).children('a')[0].hash)
-    events($($ethumbs[0]).children('a')[0].hash)
-  },1)
+    events(l.hash)
+  },2)
 
 
   document.addEventListener("keydown", function (e) {

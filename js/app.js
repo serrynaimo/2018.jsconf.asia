@@ -62,11 +62,8 @@ $("#subscribeForm input[type='email']").on("focus", function() {
     }
 });
 
-
-var start = new Date() //new Date('<?php echo date("r"); ?>')
-var months = [0,0,0,0,0,0,0,0,0,'Oct','Nov','Dec','Jan']
-var nextmonth = months[start.getMonth() + 1]
-var target = start.getFullYear() < 2018 ? 'Mon, 1 ' + nextmonth + (nextmonth !== 'Jan' ? ' 2017' : ' 2018') + ' 00:00:00 +0800' : 'Wed, 1 Jan 2018 00:00:00 +0800'
+var nextmonth = months[startdate.getMonth() + 1]
+var target = startdate.getFullYear() < 2018 ? 'Mon, 1 ' + nextmonth + (nextmonth !== 'Jan' ? ' 2017' : ' 2018') + ' 00:00:00 +0800' : 'Wed, 1 Jan 2018 00:00:00 +0800'
 CountDownTimer(target, 'countdown');
 
 function CountDownTimer(dt, id)
@@ -78,13 +75,13 @@ function CountDownTimer(dt, id)
 		var _hour = _minute * 60;
 		var _day = _hour * 24;
 		var startjs = new Date();
-		var diff = startjs - start;
+		var diff = startjs - startdate;
 		var timer;
 
 		function showRemaining() {
 				var now = new Date();
 				var passed = now - startjs;
-				var distance = end - start - passed;
+				var distance = end - startdate - passed;
 				if (distance <= 0) {
 
 						clearInterval(timer);

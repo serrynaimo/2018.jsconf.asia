@@ -576,8 +576,12 @@ a.button:hover:after {
   -ms-scroll-snap-points-x: snapInterval(100%, 0);
 }
 
+.carousel > div {
+  display: flex;
+  justify-content: space-around;
+}
+
 .speaker {
-  float: left;
   width: 50vw;
   -webkit-scroll-snap-align: start;
   -ms-scroll-snap-align: start;
