@@ -357,6 +357,22 @@
     var months = [0,0,0,0,0,0,0,0,0,'Oct','Nov','Dec','Jan']
   </script>
 
+  <script>
+    {
+      const request = new XMLHttpRequest()
+      request.open('GET', '/api/currentTime', false)
+      request.send(null)
+      
+      if (request.status === 200) {
+        const currentTime = request.getResponseHeader('date')
+        const currentDate = new Date(currentTime)
+        if (currentDate.toString() !== 'Invalid Date') {
+          startdate = currentDate
+        }
+      }
+    }
+  </script>
+
   <script src="./js/jquery.min.js"></script>
   <script src="./js/jquery.form.min.js"></script>
   <script src="./js/snappoint.min.js"></script>
