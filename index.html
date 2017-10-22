@@ -1,6 +1,3 @@
-<?php
-  date_default_timezone_set('Asia/Singapore');
-?>
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:og="http://ogp.me/ns#"
@@ -356,10 +353,7 @@
   </section>
 
   <script>
-    var startdate = new Date('<?php echo date("r"); ?>')
-    if(startdate.toString() === "Invalid Date") {
-      startdate = new Date()
-    }
+    var startdate = new Date()
     var months = [0,0,0,0,0,0,0,0,0,'Oct','Nov','Dec','Jan']
   </script>
 
