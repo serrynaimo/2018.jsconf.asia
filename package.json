@@ -1,0 +1,16 @@
+{
+  "name": "2018.jsconf.asia",
+  "private": true,
+  "description": "2018 JSConf.Asia website",
+  "scripts": {
+    "serve": "http2server start --config http2server.development.conf.js",
+    "deploy": "http2live deploy --config http2server.production.conf.js"
+  },
+  "repository": "serrynaimo/2018.jsconf.asia",
+  "author": "Thomas Gorissen",
+  "homepage": "https://2018.jsconf.asia/",
+  "devDependencies": {
+    "@http2/live": "^1.2.2",
+    "@http2/server": "^4.2.2"
+  }
+}
