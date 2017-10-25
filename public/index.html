@@ -262,6 +262,19 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
       </div>
     </section>
 
+    <section id="sponsors">
+      <div style="text-align: center !important;">
+        <p>Supported by</p>
+        <a href="https://mozilla.com" target="_blank"><img src="img/mozilla.png" alt="Mozilla" /></a>
+        <a href="https://www.dbs.com" target="_blank"><img src="img/dbs.png" alt="DBS Bank" /></a>
+        <a href="https://wantedly.com" target="_blank"><img src="img/wantedly.png" alt="Wantedly" /></a>
+        <a href="https://uilicious.com" target="_blank"><img src="img/uilicious.svg" style="margin: 5px; height: 20px;" alt="UIlicious" /></a>
+        <a href="https://pouchnation.com" target="_blank"><img src="img/pouchnation.png" alt="PouchNATION" /></a>
+        <a href="https://palo-it.com" target="_blank"><img src="img/paloit.png" style="margin: 5px; height: 20px;" alt="Palo IT" /></a>
+        <p><br/><br/><a href="mailto:sponsors@jsconf.asia?subject=JSConf.Asia 2018 Sponsorship">Join us as sponsor</a></p>
+      </div>
+    </section>
+
     <section class="carouselc" id="events">
       <div>
         <div>
@@ -341,8 +354,8 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
         </div>
         <p>
           A Nerdherd Pte. Ltd. event<br/><br/>
-          <a href="mailto:sponsors@jsconf.asia?subject=JSConf.Asia 2018 Sponsorship">Sponsorship Inquiry</a><br/>
           <a href="https://2016.devfest.asia/code-of-conduct">Code of Conduct</a>
+          <p><a href="mailto:team@jsconf.asia">Talk to us</a></p>
         </p>
       </div>
     </section>
@@ -358,7 +371,7 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
       const request = new XMLHttpRequest()
       request.open('GET', '/api/currentTime', false)
       request.send(null)
-      
+
       if (request.status === 200) {
         const currentTime = request.getResponseHeader('date')
         const currentDate = new Date(currentTime)
@@ -402,7 +415,7 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
   		document.body.classList.remove('small')
   	}
 
-    if (p === 4 && allowAnim) {
+    if (p === 5 && allowAnim) {
       document.body.classList.add('devfest')
     }
     else {
@@ -417,7 +430,7 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
   setTimeout(function () {
     allowAnim = true
     checkS()
-  }, 2000)
+  }, 2600)
 
   var $speakers = $('.speaker')
   var $sthumbs = $('#speakers li')
@@ -535,7 +548,7 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
         speakers($($sthumbs[selecteds]).children('a')[0].hash)
       }
     }
-    else if(p === 4){
+    else if(p === 5){
       if(e.key === "ArrowLeft") {
         selecte(--selectede)
         events($($ethumbs[selectede]).children('a')[0].hash)

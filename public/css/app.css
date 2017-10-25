@@ -754,7 +754,17 @@ p, .speaker p {
     opacity: 1 !important;
 }
 
+#sponsors img {
+  max-height: 30px;
+}
 
+#sponsors > div > a {
+  padding: 5px;
+  display: inline-block;
+  height: 30px;
+  background: #fff;
+  margin: 5px;
+}
 
 
 #updates p {
