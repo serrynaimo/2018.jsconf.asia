@@ -1,6 +1,6 @@
 # listr
 
-[![Build Status Linux](https://travis-ci.org/SamVerschueren/listr.svg?branch=master)](https://travis-ci.org/SamVerschueren/listr) [![Build status Windows](https://ci.appveyor.com/api/projects/status/y8vhpwsb98b8o4cm?svg=true)](https://ci.appveyor.com/project/SamVerschueren/listr) [![Coverage Status](https://coveralls.io/repos/SamVerschueren/listr/badge.svg?branch=master&service=github)](https://coveralls.io/github/SamVerschueren/listr?branch=master)
+[![Build Status Linux](https://travis-ci.org/SamVerschueren/listr.svg?branch=master)](https://travis-ci.org/SamVerschueren/listr) [![Build status Windows](https://ci.appveyor.com/api/projects/status/y8vhpwsb98b8o4cm?svg=true)](https://ci.appveyor.com/project/SamVerschueren/listr) [![Coverage Status](https://codecov.io/gh/SamVerschueren/listr/branch/master/graph/badge.svg)](https://codecov.io/gh/SamVerschueren/listr)
 
 > Terminal task list
 
@@ -146,8 +146,20 @@ const tasks = new Listr([
 
 ### Streams
 
-It's also possible to return a `stream`. The stream will be converted to an `Observable` and handled as such.
+It's also possible to return a [`ReadableStream`](https://nodejs.org/api/stream.html#stream_class_stream_readable). The stream will be converted to an `Observable` and handled as such.
 
+```js
+const fs = require('fs');
+const split = require('split');
+
+const list = new Listr([
+	{
+		title: 'File',
+		task: () => fs.createReadStream('data.txt', 'utf8')
+			.pipe(split(/\r?\n/, null, {trailing: false}))
+	}
+]);
+```
 
 ### Skipping tasks
 
@@ -378,7 +390,7 @@ Skip function. Read more about [skipping tasks](#skipping-tasks).
 
 #### options
 
-Any renderer specific options.
+Any renderer specific options. For instance, when using the `update-renderer`, you can pass in all of its [options](https://github.com/SamVerschueren/listr-update-renderer#options).
 
 ##### concurrent
 

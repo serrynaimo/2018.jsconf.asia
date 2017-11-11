@@ -11,12 +11,21 @@
 ```
 $ npm install --save stream-to-observable
 
-# You also need to install an Observable implementation (pick one):
-
-$ npm install --save zen-observable rxjs
-
 ```
 
+`stream-to-observable` relies on [`any-observable`](https://github.com/sindresorhus/any-observable), which will search for an available Observable implementation. You need to install one yourself:
+
+  ```
+  $ npm install --save zen-observable
+  ```
+
+  or
+
+  ```
+  $ npm install --save rxjs
+  ```
+
+If your code relies on a specific Observable implementation, you should likely specify one using `any-observable`s [registration shortcuts](https://github.com/sindresorhus/any-observable#registration-shortcuts).
 
 ## Usage
 
@@ -24,13 +33,11 @@ $ npm install --save zen-observable rxjs
 const fs = require('fs');
 const split = require('split');
 
-// You provide the Observable implmentation
-const Observable = require('zen-observable')
-const streamToObservable = require('stream-to-observable')(Observable);
+const streamToObservable = require('stream-to-observable');
 
 const readStream = fs
   .createReadStream('./hello-world.txt', {encoding: 'utf8'})
-  .pipe(split()); // chunks a stream into individual lines
+  .pipe(split());
 
 streamToObservable(readStream)
   .filter(chunk => /hello/i.test(chunk))
@@ -40,20 +47,7 @@ streamToObservable(readStream)
   });
 ```
 
-There are convenience imports for [`rxjs` observables](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html) and [`zen-observables`](https://github.com/zenparsing/zen-observable):
-
-```js
-const streamToObservable = require('stream-to-observable/zen'); // zen-observables
-// or
-const streamToObservable = require('stream-to-observable/rxjs-all'); // full rxjs implementation
-// or
-const streamToObservable = require('stream-to-observable/rxjs'); // minimal rxjs implementation
-// you can patch the minimal rxjs.
-require('rxjs/add/operator/map');
-```
-
-None of the above implementations are included as dependencies of this package, so you still need to install them yourself using `npm install`. If using the minimal `rxjs` import, be sure to see [the documentation](http://reactivex.io/rxjs/manual/installation.html) regarding patching it with additional convenience methods.
-
+The [`split`](https://github.com/dominictarr/split) module above will chunk the stream into individual lines. This is often very handy for text streams, as each observable event is guaranteed to be a line.
 
 ## API
 
@@ -64,13 +58,13 @@ None of the above implementations are included as dependencies of this package, 
 Type: [`ReadableStream`](https://nodejs.org/api/stream.html#stream_class_stream_readable)
 
 *Note:*
-`stream` can technically be any [`EventEmitter`](https://nodejs.org/api/events.html#events_class_eventemitter) instance. By default the `stream-to-observable` listens to the standard Stream events (`data`, `error`, and `end`), but those are configurable via the `options` parameter. If you are using this with a standard Stream, you likely won't need the `options` parameter.
+`stream` can technically be any [`EventEmitter`](https://nodejs.org/api/events.html#events_class_eventemitter) instance. By default, this module listens to the standard Stream events (`data`, `error`, and `end`), but those are configurable via the `options` parameter. If you are using this with a standard Stream, you likely won't need the `options` parameter.
 
 #### options
 
 ##### await
 
-Type: `Promies`<br>
+Type: `Promise`
 
 If provided, the Observable will not "complete" until `await` is resolved. If `await` is rejected, the Observable will immediately emit an `error` event and disconnect from the stream. This is mostly useful when attaching to the `stdin` or `stdout` streams of a  [`child_process`](https://nodejs.org/api/child_process.html#child_process_child_stdio). Those streams usually do not emit `error` events, even if the underlying process exits with an error. This provides a means to reject the Observable if the child process exits with an unexpected error code.
 
@@ -103,11 +97,11 @@ If you are using an `EventEmitter` or non-standard Stream, you can change which 
 
 ## Learn about Observables
 
- - Overview: https://github.com/zenparsing/es-observable
- - Formal Spec: https://zenparsing.github.io/es-observable/
+ - [Overview](https://github.com/zenparsing/es-observable)
+ - [Formal Spec](https://zenparsing.github.io/es-observable/)
  - [egghead.io lesson](https://egghead.io/lessons/javascript-introducing-the-observable) - Video
- - [`rxjs` observables](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html) - Observables Implementation
- - [`zen-observables`](https://github.com/zenparsing/zen-observable) - Observables Implementation
+ - [`rxjs` observables](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html) - Observables implementation
+ - [`zen-observables`](https://github.com/zenparsing/zen-observable) - Observables implementation
 
 ## Transform Streams
 
@@ -115,8 +109,8 @@ If you are using an `EventEmitter` or non-standard Stream, you can change which 
 
 ## Caveats
 
-It is important Note that using this module disables back-pressure controls on the stream. As such it should not be used where back-pressure throttling is required (i.e. high volume web servers). It still has value for larger projects, as it can make unit testing streams much cleaner.
+It's important to note that using this module disables back-pressure controls on the stream. As such, it should not be used where back-pressure throttling is required (i.e. high volume web servers). It still has value for larger projects, as it can make unit testing streams much cleaner.
 
 ## License
 
-MIT © [James Talmage](http://github.com/jamestalmage)
+MIT © [James Talmage](https://github.com/jamestalmage)

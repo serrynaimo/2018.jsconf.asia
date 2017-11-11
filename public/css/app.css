@@ -334,6 +334,10 @@ body:not(.small) #scroll {
 
 @media (max-width: 1023px) {
 
+  video {
+    display: none;
+  }
+
   .desktop {
     display: none;
   }
