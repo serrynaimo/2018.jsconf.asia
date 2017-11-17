@@ -20,7 +20,11 @@
 </head>
 <body>
 
-  <video src="img/jsconf.ogg" muted width="150%" height="130%" loop="infinite" autoplay="autoplay" style="position: fixed; opacity: .12; top: -15%; left: -25%;"></video>
+  <script>
+  if(document.body.clientWidth > 1023) {
+      document.write('<video src="img/jsconf.ogg" muted width="150%" height="130%" loop="infinite" autoplay="autoplay" style="position: fixed; opacity: .12; top: -15%; left: -25%;"></video>');
+  }
+  </script>
 
   <a href="https://www.youtube.com/watch?v=SgOh46SWId0" target="_blank" class="playvideo"></a>
 
