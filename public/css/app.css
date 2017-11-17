@@ -24,6 +24,47 @@ body {
   transition: opacity .3s ease-out;
 }
 
+.playvideo {
+    position: absolute;
+    margin: -24px;
+    bottom: 50%;
+    right: 24.8%;
+    z-index: 102;
+    height: 0;
+    margin: -60px -90px;
+    border-top: 26px solid transparent;
+    border-left: 50px solid rgba(255,255,255,.7);
+    border-right: 50px solid transparent;
+    border-bottom: 26px solid transparent;
+}
+.playvideo:before {
+  content: "Take a look back at 2016";
+  position: absolute;
+  bottom: -90px;
+  left: -80px;
+  color: rgba(255,255,255,.75);
+  width: 100px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.7em;
+  opacity: 0;
+  transition: opacity .3s ease-out;
+}
+.playvideo:hover:before {
+  opacity: 1;
+}
+.playvideo:after {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 100px;
+  width: 100px;
+      margin: -58px -88px;
+  border: 8px solid rgba(255,255,255,.13);
+  border-radius: 100px;
+}
+
 #slogan {
   font-style: italic;
 }
@@ -56,13 +97,19 @@ body {
   outline: none;
 }
 
-body.small #scroll {
+body.small #scroll,
+body.small .playvideo {
   opacity: 0;
 }
 
 body:not(.small) #scroll {
-  animation: show-scroll 4s ease-out 1;
   opacity: 1;
+  animation: show-scroll 4s ease-out 1;
+}
+
+body:not(.small) .playvideo  {
+  opacity: 1;
+    animation: show-scroll 2.4s ease-out 1;
 }
 
 @keyframes show-scroll {
@@ -338,6 +385,14 @@ body:not(.small) #scroll {
     display: none;
   }
 
+  .playvideo {
+    transform-origin: 25% 0%;
+    transform: scale(0.7);
+  }
+  .playvideo:hover:before {
+    opacity: 0;
+  }
+
   .desktop {
     display: none;
   }
@@ -373,6 +428,13 @@ body:not(.small) #scroll {
 }
 
 @media (max-width: 639px) {
+
+
+  .playvideo {
+     bottom: 20%;
+     left: calc(50% + 57px);
+  }
+
   .small #intro > div {
     transform: translate(-8%, 28%) scale(0.8);
   }
