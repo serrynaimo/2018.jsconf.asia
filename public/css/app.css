@@ -110,6 +110,7 @@ body:not(.small) #scroll {
 body:not(.small) .playvideo  {
   opacity: 1;
     animation: show-scroll 2.4s ease-out 1;
+    z-index:0;
 }
 
 @keyframes show-scroll {
