@@ -671,36 +671,43 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
 
 
   document.addEventListener("keydown", function (e) {
-    e.preventDefault()
+    if (e.target.tagName === "INPUT") {
+      return
+    }
     var h = document.body.clientHeight
     var p = Math.round($body.scrollTop / h)
     if(e.key === "ArrowUp") {
       $body.scrollTop = (p - 1) * h
+      e.preventDefault()
     }
     else if(e.key === "ArrowDown") {
       $body.scrollTop = (p + 1) * h
+      e.preventDefault()
     }
     else if(p === 1){
       if(e.key === "ArrowLeft") {
         selects(--selecteds)
         speakers($($sthumbs[selecteds]).children('a')[0].hash)
+        e.preventDefault()
       }
       else if(e.key === "ArrowRight") {
         selects(++selecteds)
         speakers($($sthumbs[selecteds]).children('a')[0].hash)
+        e.preventDefault()
       }
     }
     else if(p === 5){
       if(e.key === "ArrowLeft") {
         selecte(--selectede)
         events($($ethumbs[selectede]).children('a')[0].hash)
+        e.preventDefault()
       }
       else if(e.key === "ArrowRight") {
         selecte(++selectede)
         events($($ethumbs[selectede]).children('a')[0].hash)
+        e.preventDefault()
       }
     }
-    return false
   })
 
   if(window.location.toString().indexOf("?events") > 0) {
