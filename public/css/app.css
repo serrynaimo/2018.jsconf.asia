@@ -602,6 +602,9 @@ a.button:hover:after {
   justify-content: center;
   font-size: 1.3em;
 }
+.round.past {
+  opacity: 0.4;
+}
 
 .round .day {
   display: block;
@@ -618,6 +621,7 @@ a.button:hover:after {
   height: 118px;
   line-height: 118px;
   color: #fff;
+  opacity: 1 !important;
 }
 
 .carousel {
