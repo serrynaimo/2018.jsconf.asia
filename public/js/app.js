@@ -180,7 +180,7 @@ var showMenu = function (e) {
 		document.body.classList.remove("tiltz");
 	}
 	if (e) {
-		location = e.target.href;
+		setTimeout(function () { location = e.target.href }, 420);
 	}
 	document.body.scrollTop = 0;
 	return false;
