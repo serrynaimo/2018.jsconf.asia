@@ -179,9 +179,10 @@ var showMenu = function (e) {
 	} else {
 		document.body.classList.remove("tiltz");
 	}
-	location = e.target.href;
 	document.body.scrollTop = 0;
-
+	if (e) {
+		location = e.target.href;
+	}
 	return false;
 }
 $('#all').click(function () {
