@@ -568,7 +568,7 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
   var $body = document.getElementById('body')
   var allowAnim = false
   var checkS = function () {
-    var h = document.body.clientHeight
+    var h = document.getElementById("intro").clientHeight
     var p = Math.round($body.scrollTop / h)
 
   	if ($body.scrollTop > 10) {
@@ -577,7 +577,7 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
   	else {
   		document.body.classList.remove('small')
   	}
-
+    console.log(allowAnim, p)
     if (p === 5 && allowAnim) {
       document.body.classList.add('devfest')
     }
