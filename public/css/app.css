@@ -2,16 +2,15 @@ html,
 body {
   margin: 0px;
   padding: 0px;
-  background: #111;
+  background: #181818;
   overflow: hidden;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
   position: relative;
-  background: radial-gradient(ellipse at bottom left, #021C7F 40%, #111 100%);
 }
 
 #scroll {
   position: absolute;
-  bottom: 40px;
+  bottom: calc(40vh + 40px);
   right: 24.8%;
   margin: 0 -100px;
   width: 200px;
@@ -27,7 +26,7 @@ body {
 .playvideo {
     position: absolute;
     margin: -24px;
-    bottom: 50%;
+    bottom: 64%;
     right: 24.8%;
     z-index: 102;
     height: 0;
@@ -72,8 +71,8 @@ body {
 #layer {
   z-index: 110;
   position: absolute;
-  top: 10px;
-  left: 15px;
+  top: 70px;
+  left: 20px;
 }
 
 #layer a {
@@ -875,5 +874,74 @@ p, .speaker p {
 }
 
 #footer p a {
+  color: #fff;
+}
+
+#hamburg {
+  position: absolute;
+  z-index: 1000;
+  top: 22px;
+  left: 20px;
+  border-top: 2px solid #fff;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+#hamburg:before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  border-top: 2px solid #fff;
+  width: 20px;
+}
+
+#hamburg:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  border-top: 2px solid #fff;
+  width: 20px;
+}
+
+#all {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 100px 50px black;
+  top: -40vh;
+  padding-top: 40vh;
+  background: radial-gradient(ellipse at bottom left, #021C7F 40%, #111 100%);
+  transition: transform 0.4s cubic-bezier(.82,0,.63,1.26);
+  transform-origin: 0% 160%;
+  width: 100vw;
+  height: 140vh;
+}
+#all > div {
+  position: absolute;
+  overflow: hidden;
+  top: 40vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.tilt #all {
+  transform: rotateZ(9deg);
+}
+#menu {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+}
+.tiltz #menu {
+  z-index: 1001;
+}
+#menu a {
+  color: #fff;
+  display: block;
+  margin-bottom: 15px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.8);
+}
+#menu a:hover {
   color: #fff;
 }

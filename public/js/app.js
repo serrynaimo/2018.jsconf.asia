@@ -167,3 +167,26 @@ props.forEach(function(p) {
 	$debug.appendChild(i)
 	inputs.push(i)
 })
+
+var menushown = false;
+var showMenu = function (e) {
+	document.body.classList.toggle("tilt");
+	menushown = !menushown;
+	if(menushown) {
+		setTimeout(function () {
+			document.body.classList.add("tiltz");
+		},350);
+	} else {
+		document.body.classList.remove("tiltz");
+	}
+	location = e.target.href;
+	document.body.scrollTop = 0;
+
+	return false;
+}
+$('#all').click(function () {
+	document.body.classList.remove("tilt");
+	document.body.classList.remove("tiltz");
+	menushown = false;
+})
+$("#menu a").click(showMenu);
