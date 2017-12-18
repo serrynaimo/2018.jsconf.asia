@@ -179,10 +179,10 @@ var showMenu = function (e) {
 	} else {
 		document.body.classList.remove("tiltz");
 	}
-	document.body.scrollTop = 0;
 	if (e) {
 		location = e.target.href;
 	}
+	document.body.scrollTop = 0;
 	return false;
 }
 $('#all').click(function () {
