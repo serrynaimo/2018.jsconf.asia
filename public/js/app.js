@@ -62,6 +62,10 @@ $("#subscribeForm input[type='email']").on("focus", function() {
     }
 });
 
+$('.speaker').click(function(e) {
+   $(e.currentTarget).toggleClass('open');
+});
+
 var nextmonth = months[startdate.getMonth() + 1]
 var target = startdate.getFullYear() < 2018 ? 'Mon, 1 ' + nextmonth + (nextmonth !== 'Jan' ? ' 2017' : ' 2018') + ' 00:00:00 +0800' : 'Wed, 1 Jan 2018 00:00:00 +0800'
 CountDownTimer(target, 'countdown');

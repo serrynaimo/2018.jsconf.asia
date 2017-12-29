@@ -21,39 +21,419 @@
 <body>
 
   <nav id="menu">
-    <a href="#speakers">Speakers</a>
+    <a href="#speakers">Program</a>
     <a href="#tickets">Tickets</a>
-    <a href="#about">About</a>
+    <!--<a href="#about">About</a>//-->
     <a href="#sponsors">Sponsors</a>
     <a href="#events">DevFest.Asia Events</a>
   </nav>
 
   <div id="all"><div>
 
-  <script>
+  <!--<script>
   if(document.body.clientWidth > 1023) {
       document.write('<video src="img/jsconf.ogg" muted width="150%" height="130%" loop="infinite" autoplay="autoplay" style="position: fixed; opacity: .12; top: -15%; left: -25%;"></video>');
   }
-  </script>
+</script>//-->
 
   <a href="https://www.youtube.com/watch?v=SgOh46SWId0" target="_blank" class="playvideo"></a>
 
   <div id="scroll">Scroll for more<br/><span class="desktop">or use arrow keys</span></div>
 
-  <code id="layer">
-    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d" target="_blank">matrix3d</a>
-    <div id="debug"></div>
-  </code>
-
-  <section id="intro"><div>
-    <div id="disc"><img src="img/js.svg" id="js" /><img src="img/devfestasia.svg" id="devfest" /><div id="info"><span>25-27 JANUARY 2018<br/>SINGAPORE</span></div>
-  </div></section>
-
   <section id="body">
 
-    <section>&nbsp;</section>
+    <code id="layer">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d" target="_blank">matrix3d</a>
+      <div id="debug"></div>
+    </code>
 
-    <section class="carouselc" id="speakers">
+    <section id="intro"><div>
+      <div id="disc"><img src="img/js.svg" id="js" /><img src="img/devfestasia.svg" id="devfest" /><div id="info"><span>25-27 JANUARY 2018<br/>SINGAPORE</span></div>
+    </div></section>
+
+    <section id="speakers" class="thursday">
+      <div class="day thursday">
+          <h4>Thursday 25th</h4>
+          <div class="speaker break open">
+            <span>8 AM</span>
+            <h3>Registration</h3>
+            <h4>Capitol Theatre at 11 Stamford Rd</h4>
+            <p>Please bring your order confirmation PDF with the QR code and a photo ID 🙏</p>
+          </div>
+          <div class="speaker break">
+            <span>9 AM</span>
+            <h3>Opening</h3>
+
+          </div>
+          <div class="speaker">
+            <span>9:30 AM</span>
+            <img src="img/una.jpg" />
+            <h3>CSS Blend Modes, Because...</h3>
+            <h4>Una Kravets, DigitalOcean <a href="https://twitter.com/una" target="_blank">@una</a></h4>
+            <p>
+              CSS Blend modes are underutilized and can be used for a variety of things from improving image performance to creating scalable styling. This talk goes over some case studies where blend modes can make a big impact, talks about browser support, and also discusses workaround for including blend modes where they aren't supported.<br/>
+              Tour the wide world of CSS Blend modes and learn why you may want to introduce them in your own web-based projects today!
+            </p>
+            <p>
+              Una is an international speaker, <a href="https://una.im" target="_blank">technical writer</a>, <a href="https://github.com/una" target="_blank">open source</a> advocate, and Senior UI Engineer at DigitalOcean.
+              <br/>She’s written for various online publications such as A List Apart, Smashing Magazine, and Sitepoint. Una also co-hosts the <a href="http://toolsday.io" target="_blank">Toolsday</a> podcast and started both the DC and Austin Sass Meetups. She's a performance nerd, loves the open source community and listens to way too many audio books.
+            </p>
+          </div>
+          <div class="speaker break">
+              <span>10 AM</span>
+              <h3>C<sub>8</sub> H<sub>10</sub> N<sub>4</sub> O<sub>2</sub> by Microsoft</h3>
+          </div>
+          <div class="speaker">
+            <span>10:40 AM</span>
+            <img src="img/inian.jpg" />
+            <h3>Performing Dynamic Analysis of JS Apps</h3>
+            <h4>Inian Parameshwaran, Dexecure <a href="https://twitter.com/everConfusedGuy" target="_blank">@everConfusedGuy</a></h4>
+            <p>
+              Ever wondered how many times the ads in your website are using document.write? Or if you were writing to the DOM from untrusted sources? Such questions can be answered by dynamically analysing the JavaScript running in your website. Static analysis of JavaScript leads to a lot of false positives and is incredibly hard to do correctly due to features like eval, XHR, etc. Dynamic analysis of JavaScript gives much more accurate results.
+              I will talk about using meta programming APIs such as Proxies, overriding native DOM APIs and inbuilt JS functions, using Immediately Invoked Function Expressions (IIFEs), etc. to carry out your own dynamic analysis, the gotchas involved and how I handled them. Also, I will be demonstrating how to use the open-source proxy module I wrote, which makes it easy to get started on carrying out these kinds of dynamic analysis on real-world web applications.
+            </p>
+            <p>
+              Inian is the founder of a web performance company, Dexecure. He loves JavaScript, chocolates and anything related to web performance and security. He is a strong believer in the importance of having an open, decentralised and uncensored web ecosystem.
+            </p>
+          </div>
+          <div class="speaker">
+            <span>11:10 AM</span>
+            <img src="img/feross.jpg" />
+            <h3>Write Perfect Code with Standard and ESLint</h3>
+            <h4>Feross Aboukhadijeh <a href="https://twitter.com/feross" target="_blank">@feross</a></h4>
+            <p>
+              In this talk, you'll learn about code linting – how to use Standard and ESLint to catch programmer errors before they cause problems for your users. We'll discuss how to get started with linting, as well as how to improve your setup if you're already linting your code. Feross will also share the secret history of how the Standard linter was created, for the first time ever in a conference talk.
+            </p>
+            <p>
+              Feross is a mad scientist who enjoys building software that makes people say &quot;Wow, I didn't know that was possible!&quot;. Since graduating from Stanford in 2012, he's worked on PeerCDN and maintains several popular open source projects including <a href="https://webtorrent.io" target="_blank">WebTorrent</a> and <a href="https://standardjs.com" target="_blank">Standard</a>. He's currently working on a new website for <a href="https://nodefoo.com" target="_blank">Node.js documentation</a>.
+            </p>
+          </div>
+          <div class="speaker">
+            <span>11:30 AM</span>
+            <img src="img/giang.jpg" />
+            <img src="img/dickson.jpg" />
+            <h3>Be a No-Mouse Ninja: How People with Visual Impairment use Websites</h3>
+            <h4>Giang Nguyen, Grab<br/>Dickson Tan</h4>
+            <p>
+              What does it take to navigate a website with your eyes closed? Let Giang & Dickson, pioneers of the Web Accessibility (A11Y) movement in Singapore, walk you through the daily challenges they face, what it means to them, and how their experiences interfacing with websites purely through audio can help you identify new experiences for your sighted users through case examples.
+            </p>
+            <p>
+              Giang earned himself a computer science scholarship in Vietnam, interned at Intel and Captcha before joining Grab as the companies first fully blind coder. Today he manages accessibility at Grab and co-leads (these)abilities’ Web & Mobile Accessibility Initiative.
+              <br/><br/>
+              A true lifehacker at heart, Dickson is pursuing a degree in Computer Science in the NUS School of Computing and represents Singapore at accessibility conferences. He interned at Singtel IT and GovTech and is also the co-lead for (these)abilities’ Web & Mobile Accessibility Initiative.
+            </p>
+          </div>
+          <div class="speaker break">
+              <span>11:45 AM</span>
+              <h3>Highly distributed lunch</h3>
+          </div>
+          <div class="speaker">
+            <span>1 PM</span>
+            <img src="img/shirley.jpg" />
+            <img src="img/nadieh.jpg" />
+            <h3>data sketch|es: a year of exotic data visualizations</h3>
+            <h4>Shirley Wu <a href="https://twitter.com/sxywu" target="_blank">@sxywu</a><br/>Nadieh Bremer <a href="https://twitter.com/NadiehBremer" target="_blank">@NadiehBremer</a></h4>
+            <p>
+              Data sketches is a collaboration between Nadieh Bremer and Shirley Wu, where we choose a topic and visualize it by the end of the month, and write about our process. In this talk, we will share our favorite months of data, sketches, and code: what made them our favorites, the mistakes we made along the way, and how we overcame them.  We want to share our lessons learned to highlight that, though many of our visualizations had humble, ugly duckling beginnings, we were able to produce unique and compelling results through many (embarrassing) iterations.
+            </p>
+            <p>
+              Shirley is a freelance software engineer specializing in data visualization.
+              She combines her love of art, math, and code into colorful, interactive data visualizations.
+              She enjoys finding fun insights in data and weaving them into stories and exploratory tools
+              for the reader to discover.
+              Her work can be found at <a href="http://www.sxywu.com" target="_blank">sxywu.com</a>.
+              <br/><br/>
+              Nadieh is a graduated Astronomer, turned Data Scientist,
+              turned self-taught Data Visualization Designer.
+              After working for a consultancy &amp; fintech companies where she discovered
+              her passion for the visualization of data, she's now working as a freelancing
+              data visualization designer under the name Visual Cinnamon.
+            </p>
+          </div>
+          <div class="speaker">
+            <span>1:30 PM</span>
+            <img src="img/wilson.jpg" />
+            <h3>Micro Frontend: a microservice architecture from your frontend web apps</h3>
+            <h4>Wilson Mendes <a href="https://twitter.com/willmendesneto" target="_blank">@willmendesneto</a></h4>
+            <p>
+              Are you working with a big Frontend application and you are facing some problems in your project? Do you want migrate your frontend from another framework or library and don’t know how? Don't you know how to manage different layers of complexity in your application or share these components between applications?
+              <br/>In this talk, I will share my experience and decisions creating micro frontend applications, how to manage quality, deployment and more that makes your team deliver more valuable features giving you the power to migrate, improve, evolve and experiment in your product.
+            </p>
+            <p>
+              Wilson is a Google Developer Expert on Angular and Web Technologies and international speaker. He is passionate OSS contributor and active in the communities around Angular, JavaScript, HTML5, CSS3, Workflow, web performance, security and Internet of things.
+            </p>
+          </div>
+          <div class="speaker">
+            <span>2 PM</span>
+            <img src="img/shazron.jpg" />
+            <h3>Serverless Applications with Node.JS in OpenWhisk and Adobe I/O Runtime</h3>
+            <h4>Shazron Abdullah, Adobe <a href="https://twitter.com/shazron" target="_blank">@shazron</a></h4>
+            <p>
+              Serverless computing is a powerful way for JavaScript developers to create backend services that can power a variety of experiences from the browser to IoT devices. At Adobe, we are embracing serverless as a way to enable our developer ecosystem to easily create experience applications that extend our solutions. We’re building this platform, Adobe I/O Runtime, on top of an open source project, Apache OpenWhisk. In this talk you’ll learn about Apache OpenWhisk, what kinds of use cases are good for serverless, and how to use build serverless applications using NodeJS. Using Adobe I/O Runtime, you’ll see how to deploy code as serverless functions, how event-driven architecture can be a powerful compliment for serverless, how to build more complex applications by combining multiple functions, and how to expose your functions as APIs so they can be used across multiple experiences. You’ll walk away with a clear picture of where it makes sense to use serverless computing and how to get started.
+            </p>
+            <p>
+              Based in San Francisco, by way of Vancouver, Canada and Singapore, Shaz has nearly two decades of software development experience getting with the nitty gritty of Windows, OS X and iOS and probably helped code something you know. Currently he is on the Adobe I/O team and also helps maintain the iOS platform of Apache Cordova + Adobe PhoneGap and has been part of that project for quite some time.
+            </p>
+          </div>
+          <div class="speaker">
+            <span>2:15 PM</span>
+            <img src="img/istvan.jpg" />
+            <h3>Honey, I Shrunk the Scripts! — the secret life of JS on microcontrollers</h3>
+            <h4>István Szmozsánszky "Flaki", Mozilla <a href="https://twitter.com/slsoftworks" target="_blank">@slsoftworks</a></h4>
+            <p>
+              In 2015 I published an article on JavaScript's &quot;World Domination&quot;. Back then, a bit more than two years ago, in this 6000-word beast JavaScript on hardware was almost like an afterthought, a footnote on the last page and a bit. But even then, the writing was already on the wall — it was only a matter of time until JavaScript's triumphant march reached the most minute of the silicone army…
+              Indeed,two years later, there's already this thriving ecosystem of tiny JavaScript-dialects: they are powering a wide variety of miniature computers (colloquially only referred to as ""IoT""), from industry automations to smartwatches, they are everywhere.
+              My bet is, even if you have never heard of JerryScript, duktape, or V7 before — you surely will want to now. ;)
+            </p>
+            <p>
+              István (or Flaki, for short) is a JavaScript world-domination prophet, engineer &amp; trainer from Budapest. He runs his own consulting business Skylark, is a Frontend Trainer @ DPC Consulting and a longtime Mozilla-contributor. He contributes to various open source projects like Firefox, Firefox OS, Rust, Servo and the Tessel Project.<br/>His favorite topics include service workers, progressive webapps and JS on microcontrollers.
+            </p>
+          </div>
+          <div class="speaker break">
+              <span>2:45 PM</span>
+              <h3>Refreshments outside</h3>
+          </div>
+          <div class="speaker">
+            <span>3:30 PM</span>
+            <img src="img/tony.jpg" />
+            <h3>Evolving DBS Frontend</h3>
+            <h4>Tony Sebastian, DBS<a href="https://twitter.com/tsktony" target="_blank">@tsktony</a></h4>
+            <p>
+              Over the last year, DBS frontend architecture for building customer facing applications has evolved to keep pace with the rapid advancement happening in the JavaScript world. Get excited how we approached and executed changes on large enterprise frontend.
+            </p>
+            <p>
+              Tony is a digital product development leader at DBS Bank in Singapore, with experience in delivering large and complex web and mobile products and infrastructure in the e-commerce, financial services and payments industry.
+            </p>
+          </div>
+          <div class="speaker">
+            <span>3:45 PM</span>
+            <img src="img/huijing.jpg" />
+            <h3>When East meets West: web typography and how it can inspire modern layouts</h3>
+            <h4>Chen Hui Jing <a href="https://twitter.com/hj_chen" target="_blank">@hj_chen</a></h4>
+            <p>
+              This talk traces the parallel history of western and eastern typography from handwriting to the internet age, setting the context for how the web is a brand new medium for typesetting. CSS allows us to implement advanced typographic features and multi-directional layouts, that not only benefits internationalisation, but opens up a myriad of options for creative and interesting layouts in general as well.
+            </p>
+            <p>
+              Hui Jing is a self-taught designer and developer with an inordinate love for CSS.
+              Reducing lines of code in her web projects makes her extremely happy.
+              She used to play basketball full-time and launched her web career during downtime
+              between training sessions.
+            </p>
+          </div>
+          <div class="speaker">
+            <span>4:15 PM</span>
+            <img src="img/matteo.jpg" />
+            <h3>My Node.js process is on fire</h3>
+            <h4>Matteo Collina, nearForm <a href="https://twitter.com/matteocollina" target="_blank">@matteocollina</a></h4>
+            <p>
+              At 10am on Black Friday, your phone rings: the new JS application you deployed came under too much load, and the site has gone down! Your employer is losing sales opportunities... your employer is losing money! But you don’t lose your cool. You log into your cloud provider and tweak your autoscaling settings. Now the deployment can handle the load spike but with four times the number of servers, which is four times the cost. The next day, you try to analyze what happened and begin to optimize your application to prepare for future load spikes.  This talk is a journey into the world of Node.js performance, taking a look at the available tools and optimization techniques inspired by insight gained from glimpsing under the hood of Node and V8.
+            </p>
+            <p>
+              Matteo is a code pirate, mad scientist and part of the Node.js Technical Steering Committee. As a Principal Architect at nearForm, he consults for the top brands of the world. He authored Node.js MQTT Broker, Mosca, the fast logger Pino and the Fastify web framework.
+            </p>
+          </div>
+          <div class="speaker">
+            <span>4:30 PM</span>
+            <img src="img/david.jpg" />
+            <h3>Enabling New Web Experiences</h3>
+            <h4>David Bryant, Mozilla <a href="https://twitter.com/david_bryant" target="_blank">@david_bryant</a></h4>
+            <p>
+              Speech, mixed reality and machine learning are all the rage. How do we incorporate these emerging technologies into today’s web and provide enriching opportunities for creators and compelling experiences for users? How do we make those experiences buildable and deployable at scale to everyone, everywhere?
+Come hear how Mozilla blends established core web components like JavaScript with breakthrough new capabilities like WebAssembly and powerful new programming languages like Rust to transform the web.
+            </p>
+            <p>
+              David is a Fellow in Mozilla’s Emerging Technologies group, providing technical expertise for Mozilla's engineering and leads its Developer Outreach team. Before this he led product engineering, marketing, sales enablement and technology licensing at Bell Labs, Sun and Nokia. Throughout his career David has been motivated to build Internet and computing solutions that matter to people.
+            </p>
+          </div>
+          <div class="speaker break open">
+            <span>6-10 PM</span>
+            <h3>Code In The Dark</h3>
+            <h4>
+              at CANVAS, 20 Upper Circular Rd
+            </h4>
+            <p>
+              Hosted by Justin Lee and Tim Holman<br/>
+              Bring your laptop to compete, have fun and win amazing prizes!
+            </p>
+          </div>
+      </div>
+      <div class="day friday">
+              <h4>Saturday 27th</h4>
+              <div class="speaker break">
+                <span>8 AM</span>
+                <h3>Come early. Microsoft has coffee for you.</h3>
+              </div>
+              <div class="speaker">
+                <span>9 AM</span>
+                <img src="img/martin.jpg" />
+                <h3>Virtual Reality in your browser</h3>
+                <h4>
+                  Martin Splitt  <a href="https://twitter.com/g33konaut" target="_blank">@g33konaut</a>
+                </h4>
+                <p>
+                  Virtual Reality are coming to our browsers, so it's time to explore!
+                  In this talk, we will look at what it takes to start building VR apps with HTML and JavaScript and create a virtual world in the browser, ready to rumble!
+                </p>
+                <p>
+                  Martin is open source contributor, WebGL tinkerer and web evangelist by heart from Zurich
+                  with a decade experience from the trenches of software engineering in multiple fields.<br/>
+                  He works as a software engineer at Archilogic in front- and backend.
+                  He devotes his time to moving the web forward, fixing problems, building applications and systems
+                  and breaking things for fun &amp; profit.
+                </p>
+              </div>
+              <div class="speaker">
+                <span>9:30 AM</span>
+                <img src="img/sareh.jpg" />
+                <h3>Accessible JS</h3>
+                <h4>Sareh Heidari, BBC News <a href="https://twitter.com/sareh88" target="_blank">@sareh88</a></h4>
+                <p>
+
+                </p>
+                <p>
+                  Sareh is a web developer at BBC News, in London. She's interested in web accessibility, performance and all the various things that improve a user's experience of interacting with websites.
+                </p>
+              </div>
+              <div class="speaker break">
+                <span>10 AM</span>
+                <h3>Breakpoint</h3>
+              </div>
+              <div class="speaker">
+                <span>10:40 AM</span>
+                <img src="img/alyssa.jpg" />
+                <h3>Bot building — debunking myths and hard lessons learnt</h3>
+                <h4>Alyssa Ong, Microsoft <a href="https://twitter.com/alyssaong1337" target="_blank">@alyssaong1337</a></h4>
+                <p>
+                  Building a bot isn’t hard… or is it? In this session, we’ll be going through fun code stories and demos to uncover some best practices in building bots and NLP models. Find out about common challenges & limitations faced, and the top scenarios and myths when it comes to bots for enterprises. In this session, I will share personal stories during my bot building journey, and learnings from the successes and failures that resulted.
+                </p>
+                <p>
+                  Alyssa works with Microsoft's Commercial Software Engineering team and is the resident expert in bots. Featured in VentureBeat as one of the top 100 people to watch in the chatbot space, she loves working with startups and enterprises across Southeast Asia and bringing their bots to life (not literally). She is also a part time bubble tea addict, cryptocurrency trader and student of life.
+                </p>
+              </div>
+              <div class="speaker">
+                <span>11:10 AM</span>
+                <img src="img/jerome.jpg" />
+                <h3>How To Do Augmented Reality On The Web — The AR.js Open-Source Project</h3>
+                <h4>Jerome Etienne <a href="https://twitter.com/jerome_etienne" target="_blank">@jerome_etienne</a></h4>
+                <p>
+                  WebAR is coming! And some would argue that it's already here. Developing augmented reality on the web can sound very complex. This is why I developed a way to make it easier for anyone to do AR, and I want to share it with you. It is called AR.js. In this talk I will take you through what WebAR is, what are its possibilities and its challenges. We will take a look at the major players and the recent developments in the AR world. Finally, I will share some demos made with AR.js, a fully open-source solution to do efficient augmented reality on the web! Can't wait :)
+                </p>
+                <p>
+                  Jerome is the creator of AR.js, making WebAR a reality! He is the author of the Learning Three.js blog and the 8th most active user on Github. He has been CTO at Daqri and is a hardcore Javascript and WebGL developer.
+                </p>
+              </div>
+              <div class="speaker break">
+                  <span>11:45 AM</span>
+                  <h3>Food is served</h3>
+              </div>
+              <div class="speaker">
+                <span>1 PM</span>
+                <img src="img/pasindu.jpg" />
+                <h3>Party Robots United</h3>
+                <h4>Pasindu De Silva <a href="https://twitter.com/Ghosteyes1" target="_blank">@Ghosteyes1</a></h4>
+                <p>
+                    On-stage show case of the Node.JS Party Robot Workshop yesterday. Get ready to parteeeyy!
+                </p>
+                <p>
+                    Pasindu works on building open source text to speech systems for low resource languages by day and does various JavaScript Nodebots projects by night.
+                </p>
+              </div>
+              <div class="speaker">
+                <span>1:20 PM</span>
+                <img src="img/tim.jpg" />
+                <h3>Jolly JS Journeys</h3>
+                <h4>Tim Holman <a href="https://twitter.com/twholman" target="_blank">@twholman</a></h4>
+                <p>
+                  Ever started a project you didn't finish? Ever sat and stared at the screen, knowing you wanted to make something, but unsure of what? Ever felt like you're alone in making something? Well this talk is for you.
+                  <br/>Join me, though some weird and wacky wonderings through the web, and find how building, learning and having fun are all connected together... and gain a little more appreciation and love for javascript along the way!
+                </p>
+                <p>
+                  Tim is a tinkerer, tuner &amp; tamperer of all things online, and a massive fan of alliteration. He prides himself in the overall uselessness of the code he's written, as well as the overall joy it brings to the world.
+                </p>
+              </div>
+              <div class="speaker">
+                <span>1:45 PM</span>
+                <img src="img/thai.jpg" />
+                <h3>Smells in React apps</h3>
+                <h4>Thai Pangsakulyanont, Taskworld <a href="https://twitter.com/dtinth" target="_blank">@dtinth</a></h4>
+                <p>
+                    Recognizing code smells is an important skill that helps you build maintainable software. This talk is about code and design smells in React applications, based on the experience working in a 2-year-old project with more than 900 components.
+                </p>
+                <p>
+                  Thai is a front-end architect at Taskworld. He’s interested in the ways of building better software with better design, and helps organizing a React meetups in Bangkok. He likes to <a href="https://github.com/dtinth" target="_blank">code</a> and make <a href="https://flicknote.spacet.me" target="_blank">music</a> for fun. He also develops an open-source web-based <a href="https://github.com/bemusic/bemuse" target="_blank">rhythm game</a> in his free time.
+                </p>
+              </div>
+              <div class="speaker">
+                <span>2:15 PM</span>
+                <img src="img/jake.jpg" />
+                <h3>In the loop</h3>
+                <h4>Jake Archibald, Google</h4>
+                <p>
+                  Have you ever had a bug where things were happening in the wrong order, or particular style changes were being ignored? Ever fixed that bug by wrapping a section of code in a setTimeout? Ever found that fix to be unreliable, and played around with the timeout number until it kinda almost always worked?
+                  <br/>This talk looks at the browser's event loop, the thing that orchestrates the main thread of the browser, which includes JavaScript, events, and rendering.
+                  We'll look at the difference between tasks, microtasks, requestAnimationFrame, requestIdleCallback, and where events land.
+                  <br/>Hopefully you'll never have to use setTimeout hacks again!"
+                </p>
+                <p>
+                  Jake is developer advocate for Google Chrome. He's one of the editors of the service worker spec, so he's into offline-first, push messaging and web performance.
+                </p>
+              </div>
+              <div class="speaker break">
+                  <span>2:45 PM</span>
+                  <h3>Lightning Talks / Break</h3>
+              </div>
+              <div class="speaker">
+                <span>3:45 PM</span>
+                <img src="img/zell.jpg" />
+                <h3>What writing about frontend dev taught me about communicating with the world</h3>
+                <h4>Zell Liew <a href="https://twitter.com/zellwk" target="_blank">@zellwk</a></h4>
+                <p>
+                  If we want to make things work, we need to communicate with other people. We need to talk to our users, audiences, colleagues, clients or even our bosses. We want to share our ideas and make sure they get it, so we can produce work that we're proud of.
+                  And right now, in our world, we mainly communicate through text. We talk through 140 characters, chat messages, blog posts or even README documents. We write everyday.
+                  But how do you write better? How do you improve your communication so hopefully the other party listens (or reads) and performs the action you wish they do?
+                  <br/>In this talk, I'd like to share with you what I learned from writing about code for four years – I'll share surprising things I discovered, and how you can improve your communication and get people to take action.
+                </p>
+                <p>
+                  Zell is a freelance developer from Singapore. When he's not working on client projects, he digs deep into code and explains what he learned on his blog. He has written books and courses, which include <a href="https://automateyourworkflow.com" target="_blank">Automate Your Workflow</a> and <a href="http://learnjavascript.today" target="_blank">Learn JavaScript</a>.
+                </p>
+              </div>
+              <div class="speaker">
+                <span>4 PM</span>
+                <img src="img/irina.jpg" />
+                <h3>Storytelling with Performance Observers</h3>
+                <h4>Irina Shestak <a href="https://twitter.com/_lrlna" target="_blank">@_lrlna</a></h4>
+                <p>
+                  Chances are that if you work in software, you spend time building applications. Between features, deadlines and bug fixes, it's easy to move performance to be ""nice to have"". But what do you do when user interactions drop off, and users start complaining?
+                  Instead of having a traditional, reactive approach to performance — what if we
+                  could be proactive instead? What if we could monitor performance continuously, and make informed decisions on which issues to tackle.
+                  In this talk, I would like to focus on continuous performance monitoring to tell a story of user interactions. We will look into working with Performance API in your environment, and give you simple methods to tell and read a story of your
+                  transactions. We will specifically take a look at creating timings, working with observers, and tracking transactions from frontend to backend.
+                </p>
+                <p>
+                  Irina is a Berlin via London via Vancouver (geeeez grrrl) software developer who is, oh hey, hello, really into Node.js. She writes the coolest of nodes over at scripto.cc and contributes to a few OSS projects. Away from the computer, she is exploring the outdoors, gushing over trains and likely at a ramen shop™ reading some Beatniks.
+                </p>
+              </div>
+              <div class="speaker">
+                <span>4:30 PM</span>
+                <img src="img/bruce.jpg" />
+                <h3>If you're going out of San Francisco, be sure to wear Web Standards in your hair</h3>
+                <h4>Bruce Lawson, Wix <a href="https://twitter.com/brucel" target="_blank">@brucel</a></h4>
+                <p>
+                  We do like our Holy Wars, don't we? — tables vs CSS? Responsive vs mdot? React vs Angular? CSS or CSS-in-JS? Let's look at the real issue: getting the free and open web to the other 4 billion people.
+                </p>
+                <p>
+                  Bruce has been working on the web since 2002. He was a member of the Web Standards Project on the authoring committee of BS8878, the British Standard for commissioning accessible websites, helped develop HTML responsive images, was on the W3C Mobile Web Apps Best Practices Working Group, and co-authored "Introducing HTML5", the first full-length book on the subject. He was Deputy CTO of Opera Software until 2016, and now helps Wix Engineering with web standards and products.
+                </p>
+              </div>
+              <div class="speaker break">
+                <span>5 PM</span>
+                <h3></h3>
+                <h4>Family Photo and Good Bye</h4>
+              </div>
+            </div>
+    </section>
+
+    <!--<section class="carouselc" id="speakers">
       <div>
         <div>
           <p style="font-size: 0.85em;">
@@ -404,7 +784,7 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
           </div>
         </div>
       </div>
-    </section>
+    </section>//-->
 
     <section id="tickets">
       <p>
@@ -423,7 +803,7 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
       </p>
     </section>
 
-    <section id="about">
+    <!--<section id="about">
       <div style="text-align: center !important;">
         <h3>JSCONF.ASIA 2018</h3>
         <h4>2 days of talks</h4>
@@ -433,10 +813,10 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
         <p>with 15 hands-on sessions for you to choose from<br/>
         at the Shangri-La Rasa Sentosa Resort &amp; Spa</p>
       </div>
-    </section>
+    </section>//-->
 
     <section id="sponsors">
-      <div style="text-align: center !important;">
+      <div style="text-align: center !important; max-width: 680px;">
         <p>Supported by</p>
         <a href="https://mozilla.com" target="_blank"><img src="img/mozilla.png" alt="Mozilla" /></a>
         <a href="https://www.dbs.com" target="_blank"><img src="img/dbs.png" alt="DBS Bank" /></a>
@@ -447,7 +827,7 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
         <a href="https://pouchnation.com" target="_blank"><img src="img/pouchnation.png" alt="PouchNATION" /></a>
         <a href="https://palo-it.com" target="_blank"><img src="img/paloit.png" style="margin: 5px; height: 20px;" alt="Palo IT" /></a>
         <a href="https://nearform.com" target="_blank"><img src="img/nearform.svg" style="height: 30px;" alt="nearForm" /></a>
-        <p><br/><br/><a href="mailto:sponsors@jsconf.asia?subject=JSConf.Asia 2018 Sponsorship">Join us as sponsor</a></p>
+        <!--<p><br/><br/><a href="mailto:sponsors@jsconf.asia?subject=JSConf.Asia 2018 Sponsorship">Join us as sponsor</a></p>//--><br/><br/><br/>
       </div>
     </section>
 
@@ -471,28 +851,28 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
         </div>
         <div>
           <div class="carousel">
-            <div id="ecarousel"><div id="oct25" class="speaker">
+            <div id="ecarousel"><div id="oct25" class="event">
                 <div>
                   <h3>Becoming a conference speaker</h3>
                   <h4>7pm at Collision 8</h4>
                 </div>
                 <p>Considering giving a talk at JSConf.Asia or any other technical conference, but not sure what to talk about? Or simply can't get started on writing the talk proposal itself? Come join us at the very first RFP & speaker workshop in Singapore, where you will meet conference speakers and speakers to-be.</p>
                 <a href="https://www.eventnook.com/event/becomingatechconferencespeaker/home" target="_blank" class="external">Registration and more info</a>
-              </div><div id="jan23" class="speaker">
+              </div><div id="jan23" class="event">
                 <div>
                   <h3>Talk.CSS max-content edition</h3>
                   <h4>3pm at Microsoft</h4>
                 </div>
                 <p>Hui Jin and Chris celebrating more than 2 years of Talk.CSS meetup with an afternoon full of special guests from around the world.</p>
                 <a href="http://www.eventnook.com/event/talkcssconference2018" target="_blank" class="external">Registration and more info</a>
-              </div><div id="jan24" class="speaker">
+              </div><div id="jan24" class="event">
                 <div>
                   <h3>Talk.JS</h3>
                   <h4>7pm at PayPal</h4>
                 </div>
                 <p>Singapore's premier JavaScript meetup</p>
                 <a href="https://www.meetup.com/Singapore-JS/events/" target="_blank" class="external">Registration and more info</a>
-              </div><div id="jan25" class="speaker">
+              </div><div id="jan25" class="event">
                 <div>
                   <h3>JSConf.Asia</h3>
                   <h4>9am - 5:30pm at Capitol Theatre</h4>
@@ -506,21 +886,21 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
                 </div>
                 <p>Back due to popular demand: Test how good your HTML and CSS skills really are: Recreate a website from scratch within 15min and win amazing prizes! Drinks free for all our JSConf.Asia attendees!</p>
                 <a href="http://codeinthedark.com" target="_blank" class="external">No registration required</a>
-              </div><div id="jan26" class="speaker">
+              </div><div id="jan26" class="event">
                 <div>
                   <h3>JSConf.Asia</h3>
                   <h4>9am - 10pm at Shangri La Rasa, Sentosa</h4>
                 </div>
                 <p>Day 2. Community workshop day, hands-on sessions, great food and the DBS beach-party.</p>
                 <a href="https://events.pouchnation.com/event/jsconfasia2018" target="_blank" class="external">Get your ticket</a>
-              </div><div id="jan27" class="speaker">
+              </div><div id="jan27" class="event">
                   <div>
                     <h3>JSConf.Asia</h3>
                     <h4>8am - 5:30pm at Capitol Theatre</h4>
                   </div>
                   <p>Day 3. Conference- and lightning talks, keynotes. Highly distributed lunch, snacks and moah coffee</p>
                   <a href="https://events.pouchnation.com/event/jsconfasia2018" target="_blank" class="external">Get your ticket</a>
-              </div><div id="jan28" class="speaker">
+              </div><div id="jan28" class="event">
               <div>
                   <h3>KopiJS</h3>
                   <h4>11am</h4>
@@ -598,7 +978,7 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
 
   window.onwheel = function() {
   	document.getElementById("body").style.webkitScrollSnapPointsY = "none";
-    document.querySelector("#speakers .carousel").style.webkitScrollSnapPointsY = "none";
+    //document.querySelector("#speakers .carousel").style.webkitScrollSnapPointsY = "none";
     document.querySelector("#events .carousel").style.webkitScrollSnapPointsY = "none";
   }
 
@@ -633,27 +1013,27 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
     checkS()
   }, 2600)
 
-  var $speakers = $('.speaker')
-  var $sthumbs = $('#speakers li')
+  //var $speakers = $('.speaker')
+  //var $sthumbs = $('#speakers li')
   var $ethumbs = $('#events li')
-  var $slist = document.querySelector('#speakers .list')
+  //var $slist = document.querySelector('#speakers .list')
   var $elist = document.querySelector('#events .list')
-  var $scarousel = document.querySelector('#speakers .carousel')
+  //var $scarousel = document.querySelector('#speakers .carousel')
   var $ecarousel = document.querySelector('#events .carousel')
   var selecteds = selectede = 0
 
-  document.getElementById('scarousel').style.width = ($sthumbs.length * 100) + "%"
+  //document.getElementById('scarousel').style.width = ($sthumbs.length * 100) + "%"
   document.getElementById('ecarousel').style.width = ($ethumbs.length * 100) + "%"
 
-  var scheckX = function () {
-  	var carouselw = $scarousel.clientWidth
-  	var scrollw = $scarousel.scrollWidth
-  	var scrollp = $scarousel.scrollLeft
-  	selecteds = (scrollp % carouselw < carouselw / 2) ? Math.floor(scrollp / carouselw) : Math.ceil(scrollp / carouselw)
-    selects(selecteds)
-  }
-  $scarousel.addEventListener("scroll", scheckX)
-  $scarousel.addEventListener("touchmove", scheckX)
+  // var scheckX = function () {
+  // 	var carouselw = $scarousel.clientWidth
+  // 	var scrollw = $scarousel.scrollWidth
+  // 	var scrollp = $scarousel.scrollLeft
+  // 	selecteds = (scrollp % carouselw < carouselw / 2) ? Math.floor(scrollp / carouselw) : Math.ceil(scrollp / carouselw)
+  //   selects(selecteds)
+  // }
+  // $scarousel.addEventListener("scroll", scheckX)
+  // $scarousel.addEventListener("touchmove", scheckX)
 
   var echeckX = function () {
   	var carouselw = $ecarousel.clientWidth
@@ -665,27 +1045,27 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
   $ecarousel.addEventListener("scroll", echeckX)
   $ecarousel.addEventListener("touchmove", echeckX)
 
-  var selects = function (speaker) {
-    if(speaker < 0) {
-      speaker = selecteds = 0
-    }
-    else if(speaker >= $sthumbs.length - 1) {
-      speaker = selecteds = $sthumbs.length - 1
-    }
-    $sthumbs.removeClass('selected')
-  	$($sthumbs[speaker]).addClass('selected')
-  	$slist.style.transform = 'translateX(' + ((29 * ($sthumbs.length - 1)) - speaker * 58) + 'px)'
-
-  }
-  var speakers = function (select) {
-    $scarousel.scrollLeft = document.querySelector(select).offsetLeft - $scarousel.offsetLeft + 1
-  }
-  var speakerc = function (e) {
-  	e.originalEvent.preventDefault()
-  	speakers($(this).children('a')[0].hash)
-    return false
-  }
-  $sthumbs.click(speakerc)
+  // var selects = function (speaker) {
+  //   if(speaker < 0) {
+  //     speaker = selecteds = 0
+  //   }
+  //   else if(speaker >= $sthumbs.length - 1) {
+  //     speaker = selecteds = $sthumbs.length - 1
+  //   }
+  //   $sthumbs.removeClass('selected')
+  // 	$($sthumbs[speaker]).addClass('selected')
+  // 	$slist.style.transform = 'translateX(' + ((29 * ($sthumbs.length - 1)) - speaker * 58) + 'px)'
+  //
+  // }
+  // var speakers = function (select) {
+  //   $scarousel.scrollLeft = document.querySelector(select).offsetLeft - $scarousel.offsetLeft + 1
+  // }
+  // var speakerc = function (e) {
+  // 	e.originalEvent.preventDefault()
+  // 	speakers($(this).children('a')[0].hash)
+  //   return false
+  // }
+  // $sthumbs.click(speakerc)
 
 
   var selecte = function (ev) {
@@ -724,7 +1104,7 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
         i++
       }
     }
-    speakers($($sthumbs[Math.floor(Math.random() * $sthumbs.length - 1)]).children('a')[0].hash)
+    //speakers($($sthumbs[Math.floor(Math.random() * $sthumbs.length - 1)]).children('a')[0].hash)
     events(l.hash)
   },2)
 
@@ -743,19 +1123,19 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
       $body.scrollTop = (p + 1) * h
       e.preventDefault()
     }
-    else if(p === 1){
-      if(e.key === "ArrowLeft") {
-        selects(--selecteds)
-        speakers($($sthumbs[selecteds]).children('a')[0].hash)
-        e.preventDefault()
-      }
-      else if(e.key === "ArrowRight") {
-        selects(++selecteds)
-        speakers($($sthumbs[selecteds]).children('a')[0].hash)
-        e.preventDefault()
-      }
-    }
-    else if(p === 5){
+    // else if(p === 1){
+    //   if(e.key === "ArrowLeft") {
+    //     selects(--selecteds)
+    //     speakers($($sthumbs[selecteds]).children('a')[0].hash)
+    //     e.preventDefault()
+    //   }
+    //   else if(e.key === "ArrowRight") {
+    //     selects(++selecteds)
+    //     speakers($($sthumbs[selecteds]).children('a')[0].hash)
+    //     e.preventDefault()
+    //   }
+    // }
+    // else if(p === 4){
       if(e.key === "ArrowLeft") {
         selecte(--selectede)
         events($($ethumbs[selectede]).children('a')[0].hash)
@@ -766,7 +1146,7 @@ Aside from musical distractions and accumulating frequent flyer points, Chris an
         events($($ethumbs[selectede]).children('a')[0].hash)
         e.preventDefault()
       }
-    }
+    // }
   })
 
   if(window.location.toString().indexOf("?events") > 0) {
