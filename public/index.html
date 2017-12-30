@@ -411,7 +411,7 @@ Come hear how Mozilla blends established core web components like JavaScript wit
               </div>
               <div class="speaker break">
                   <span>12:30 AM</span>
-                  <h3>Buffet lunch</h3>
+                  <h3>Centralised lunch</h3>
               </div>
               <div class="speaker">
                 <span>1:30 PM</span>
@@ -569,7 +569,7 @@ Come hear how Mozilla blends established core web components like JavaScript wit
               <div class="speaker break">
                 <span>5-10 PM</span>
                 <h3>DBS Beach Party</h3>
-                <h4>with dinner and drinks</h4>
+                <h4>with dinner and drinks, floaties and easy tunes</h4>
               </div>
             </div>
 
@@ -642,7 +642,7 @@ Come hear how Mozilla blends established core web components like JavaScript wit
                 </div>
                 <div class="speaker break">
                     <span>11:45 AM</span>
-                    <h3>Food is served</h3>
+                    <h3>Highly distributed lunch</h3>
                 </div>
                 <div class="speaker">
                   <span>1 PM</span>
@@ -828,7 +828,7 @@ Come hear how Mozilla blends established core web components like JavaScript wit
               </div><div id="jan25" class="event">
                 <div>
                   <h3>JSConf.Asia</h3>
-                  <h4>9am - 5:30pm at Capitol Theatre</h4>
+                  <h4>8am - 5pm at Capitol Theatre</h4>
                 </div>
                 <p>Day 1. Conference talks and keynotes. Highly distributed lunch, snacks and great coffee.</p>
                 <a href="https://events.pouchnation.com/event/jsconfasia2018" target="_blank" class="external">Get your ticket</a>
@@ -842,14 +842,14 @@ Come hear how Mozilla blends established core web components like JavaScript wit
               </div><div id="jan26" class="event">
                 <div>
                   <h3>JSConf.Asia</h3>
-                  <h4>9am - 10pm at Shangri La Rasa, Sentosa</h4>
+                  <h4>8:30am-10pm at Shangri La Rasa, Sentosa</h4>
                 </div>
                 <p>Day 2. Community workshop day, hands-on sessions, great food and the DBS beach-party.</p>
                 <a href="https://events.pouchnation.com/event/jsconfasia2018" target="_blank" class="external">Get your ticket</a>
               </div><div id="jan27" class="event">
                   <div>
                     <h3>JSConf.Asia</h3>
-                    <h4>8am - 5:30pm at Capitol Theatre</h4>
+                    <h4>8:30am-5pm at Capitol Theatre</h4>
                   </div>
                   <p>Day 3. Conference- and lightning talks, keynotes. Highly distributed lunch, snacks and moah coffee</p>
                   <a href="https://events.pouchnation.com/event/jsconfasia2018" target="_blank" class="external">Get your ticket</a>
@@ -1000,7 +1000,7 @@ Come hear how Mozilla blends established core web components like JavaScript wit
 
   }
   var events = function (select) {
-    $ecarousel.scrollLeft = document.querySelector(select).offsetLeft - $ecarousel.offsetLeft + 1
+    $ecarousel.scrollLeft = document.querySelector(select).offsetLeft - ($ecarousel.clientWidth - document.querySelector(select).clientWidth)/2 + 1
   }
   var eventc = function (e) {
     e.originalEvent.preventDefault()
