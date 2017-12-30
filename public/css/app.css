@@ -412,14 +412,14 @@ body:not(.small) .playvideo  {
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 25vh;
-    height: 75vh;
+    /*height: 75vh;*/
   }
 
-  #body {
+  /*#body {
     -ms-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 70%, transparent 80%);
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 70%, transparent 80%);
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 70%, transparent 80%);
-  }
+  }*/
 
   #scroll {
     right: 50%;
@@ -658,17 +658,18 @@ a.button:hover:after {
 #body > #speakers {
   padding: 13em 0 0;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-#speakers > .day + .day {
+#speakers > .satuday {
   margin-bottom: 120px;
-  margin-left: 20px;
 }
 
 #speakers .day {
     margin-bottom: 110px;
     position: relative;
-    float: none;
+    display: inline-block;
+    margin-left: 80px;
 }
 
 #speakers .day > h4 {
@@ -678,7 +679,7 @@ a.button:hover:after {
     margin: 0 auto;
     width: 160px;
     position: relative;
-    left: -165px;
+    left: -84px;
     transform: rotate(-90deg);
     transform-origin: 9% 86%;
     text-transform: uppercase;
@@ -686,16 +687,13 @@ a.button:hover:after {
 
 
 #speakers .speaker {
-    margin: 90px auto 0;
-    width: 380px;
     position: relative;
     clear: left;
     min-height: 65px;
-}
-
-#speakers .speaker {
     transition: all .2s ease-in;
     cursor: pointer;
+    margin: 16px 0 0 20px;
+    float: left;
 }
 
 
@@ -708,6 +706,19 @@ a.button:hover:after {
     border-left: rgba(255,255,255,0.8) 1px solid;
     z-index: 2;
     width: 0;
+}
+#speakers .speaker:after {
+    content: "";
+    position: absolute;
+    left: -24px;
+    top: 25px;
+    background: #fff;
+    z-index: 3;
+    padding: 4px;
+    width: 1px;
+    height: 1px;
+    border-radius: 5px;
+    transition: background .2s ease-out;
 }
 
 #speakers .speaker > span:not(.img) {
@@ -731,7 +742,7 @@ a.button:hover:after {
     margin-top: 0;
     height: 70px;
     width: 70px;
-    margin: -7px 16px 0 -60px;
+    margin: -7px 16px 12px -60px;
     border-radius: 50%;
     border: 4px solid hsla(0,0%,100%,.15);
     transition: border .2s ease-out;
@@ -750,7 +761,7 @@ a.button:hover:after {
 }
 
 #speakers .speaker > h4 {
-    margin: -14px 0 0 34px;
+    margin: -14px 0 -5px 0;
     text-align: left;
     font-weight: 200;
     color: #fff;
@@ -764,6 +775,11 @@ a.button:hover:after {
 #speakers .speaker:not(.break):hover > img,
 #speakers .speaker.open:not(.break) > img {
     border-color: #FFED2A;
+}
+
+#speakers .speaker:not(.break):hover:after,
+#speakers .speaker.open:not(.break):after {
+  background: #FFED2A;
 }
 
 #speakers .speaker > p a {
@@ -821,19 +837,7 @@ a.button:hover:after {
 
 
 @media all and (min-width: 1020px) {
-    #speakers .day {
-      float: left;
-    }
 
-    #speakers .speaker {
-        margin: 16px 0 0 20px;
-        float: left;
-    }
-
-    #speakers .day > h4 {
-        margin: 0 0 -5px 0;
-        left: auto;
-    }
 }
 
 
