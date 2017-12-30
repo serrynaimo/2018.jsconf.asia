@@ -293,14 +293,6 @@ body:not(.small) .playvideo  {
   transition: transform 1s ease-in-out;
 }
 
-/*.small #intro > div {
-  transform: translateX(-25vw) scale(0.85) rotateY(15deg) rotateZ(-2deg);
-}
-
-.small #info > span {
-  transform: translateX(8%);
-}*/
-
 .devfest #js {
   opacity: 0;
   transform: rotateZ(7deg) rotateX(-30deg) translateY(7.8%);
@@ -353,30 +345,11 @@ body:not(.small) .playvideo  {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
-
-  /*scroll-snap-type: mandatory;
-  scroll-behaviour: auto;
-  scroll-snap-points-y: repeat(100vh);
-
-  -webkit-scroll-snap-type: mandatory;
-  -webkit-scroll-snap-destination: 100vh 0;
-  -webkit-scroll-snap-points-y: repeat(100vh);
-  -webkit-overflow-scrolling: touch;
-
-  -ms-scroll-snap-destination: 100vh 0;
-  -ms-scroll-snap-type: mandatory;
-  -ms-scroll-snap-points-y: snapInterval(0px, 100vh);*/
-
 }
 
 
 #body > section {
   padding: 5em 0;
-  /*height: 100vh;
-  -webkit-scroll-snap-align: start;
-  -ms-scroll-snap-align: start;
-  scroll-snap-align: start;
-  padding-left: 50%;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -400,26 +373,12 @@ body:not(.small) .playvideo  {
     display: none;
   }
 
-  /*.small #intro > div {
-    transform: translate(0%, 30%) scale(0.5);
-  }
-
-  .small #info > span {
-    transform: translateX(8%);
-  }*/
-
   #body > section {
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 25vh;
-    /*height: 75vh;*/
   }
 
-  /*#body {
-    -ms-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 70%, transparent 80%);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 70%, transparent 80%);
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 70%, transparent 80%);
-  }*/
 
   #scroll {
     right: 50%;
@@ -429,25 +388,6 @@ body:not(.small) .playvideo  {
     display: none;
   }
 }
-
-/*@media (max-width: 639px) {
-
-
-  .playvideo {
-     bottom: 20%;
-     left: calc(50% + 57px);
-  }
-
-  .small #intro > div {
-    transform: translate(-8%, 28%) scale(0.8);
-  }
-
-  .small #info > span {
-    transform: translateX(8%);
-  }
-}*/
-
-
 
 p {
   color: #fff;
@@ -756,7 +696,7 @@ a.button:hover:after {
     color: #fff;
     margin-top: 2px;
     font-size: 1em;
-    width: 340px;
+    width: 300px;
     position: relative;
 }
 
@@ -788,7 +728,7 @@ a.button:hover:after {
 
 #speakers .speaker > p {
     clear: left;
-    width: 340px;
+    width: 300px;
     padding-top: 6px;
     margin-left: 0px;
     font-weight: 200;
