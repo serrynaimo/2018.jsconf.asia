@@ -666,12 +666,12 @@ a.button:hover:after {
     font-size: 0.8em;
 }
 
-#speakers .speaker > a {
-    float: left;
-    height: 70px;
-    width: 70px;
-    margin-right: 16px;
-    margin-left: -60px;
+#speakers .speaker a > img {
+    height: 1.3em;
+    margin-top: -0.2em;
+    vertical-align: middle;
+    background: #fff;
+    border-radius: 2px;
 }
 
 
@@ -753,7 +753,7 @@ a.button:hover:after {
     margin-bottom: 15px;
 }
 
-#speakers .speaker img {
+#speakers .speaker > img {
     height: 70px;
     width: 70px;
   box-shadow: -1px 0 3px rgba(0,0,0,.2);

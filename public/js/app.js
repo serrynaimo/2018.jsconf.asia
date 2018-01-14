@@ -67,7 +67,7 @@ $('.speaker').click(function(e) {
 });
 
 var nextmonth = months[startdate.getMonth() + 1]
-var target = startdate.getFullYear() < 2018 ? 'Mon, 1 ' + nextmonth + (nextmonth !== 'Jan' ? ' 2017' : ' 2018') + ' 00:00:00 +0800' : 'Wed, 1 Jan 2018 00:00:00 +0800'
+var target = startdate.getFullYear() < 2018 ? 'Mon, 1 ' + nextmonth + (nextmonth !== 'Jan' ? ' 2017' : ' 2018') + ' 00:00:00 +0800' : 'Thu, 25 Jan 2018 09:00:00 +0800'
 CountDownTimer(target, 'countdown');
 
 function CountDownTimer(dt, id)
