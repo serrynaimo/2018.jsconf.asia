@@ -16,7 +16,8 @@ body > nav {
 }
 
 nav img {
-	width: 80px;
+	max-width: 80px;
+	max-height: 62px;
 	margin-top: 10px;
 }
 
