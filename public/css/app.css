@@ -37,7 +37,7 @@ body {
     border-bottom: 26px solid transparent;
 }
 .playvideo:before {
-  content: "Watch the conference live!";
+  content: "Watch now live!";
   position: absolute;
   bottom: -90px;
   left: -80px;
