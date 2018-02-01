@@ -37,7 +37,7 @@ body {
     border-bottom: 26px solid transparent;
 }
 .playvideo:before {
-  content: "Watch now live!";
+  content: "Watch the event!";
   position: absolute;
   bottom: -90px;
   left: -80px;
