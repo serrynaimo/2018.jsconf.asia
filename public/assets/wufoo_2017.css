@@ -11,6 +11,18 @@ body {
 
 #header.info {
   margin-top: -65px;
+  padding: 0 0 2em 0;
+}
+
+#header.info h2 {
+  color: #fff !important;
+}
+
+#header.info + ul {
+  padding: 1.5em 3em;
+  background: #222;
+  border-radius: 1.5em;
+  margin: 0 -15px;
 }
 
 #logo a {
@@ -20,6 +32,7 @@ body {
 
 .wufoo .info div {
   font-weight: 300 !important;
+  color: #fff;
 }
 
 .wufoo {
@@ -42,22 +55,46 @@ body {
     padding: 20px 0 !important;
 }
 
-.wufoo label, .wufoo legend {
+.wufoo label.desc, .wufoo legend.desc {
   padding-bottom: 10px !important;
+  font-family: 'Doppio One', sans-serif !important;
+  color: #fff;
 }
 
 .wufoo .instruct {
-  margin-left: 20px !important;
+  margin: 10px 0 0 20px !important;
 }
 
 .wufoo a {
   color: #478fe2 !important;
 }
 
+.wufoo input[type='email'], .wufoo input[type='text'], .wufoo textarea.textarea {
+    padding: .6em 1.1em !important;
+    color: #fff;
+    bordeR: 0 !important;
+    background: #444 !important;
+    border-radius: 1.4em !important;
+    transition: all .2s ease-out;
+  box-sizing: border-box;
+}
+
+.wufoo input[type='email']:not(:focus):hover, .wufoo input[type='text']:not(:focus):hover, .wufoo textarea:not(:focus):hover {
+  background: #555 !important;
+}
+
+.wufoo input[type='email']:focus, .wufoo input[type='text']:focus, .wufoo textarea:focus {
+	outline:none !important;
+  box-shadow: 0 0 0 2px solid #478fe2;
+  background: #fff !important;
+color: #000 !important;
+}
+
 .wufoo input[type='submit'] {
   padding: 10px 30px !important;
   background: #478fe2 !important;
   border-radius: 2px;
+ appearance: none;
   color: white !important;
   font-family: 'Doppio One' !important;
   border: 0 !important
